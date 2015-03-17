@@ -15,11 +15,18 @@ namespace Autocomplete
     {
         private string GEO_LOOKUP_STR = "http://api.wunderground.com/api/219620ed851cd61a/geolookup/q/autoip.json";
         private string QUERY_STR = "http://autocomplete.wunderground.com/aq?c=US&h=0&format=JSON&query=";
+        private string FORECAST_STR = "http://api.wunderground.com/api/219620ed851cd61a/forecast/q/";
         private HttpClient httpClient;
 
         public WeatherUndergroundAPI()
         {
              this.httpClient = new HttpClient();
+        }
+
+        public async Task<Forecast> getForecastForCity(City city)
+        {
+            ForecastResults forecastResults = await GetJsonObject<ForecastResults>(FORECAST_STR);
+            return forecastResults.forecast;
         }
 
         public async Task<City> getCityByGeoLookup()

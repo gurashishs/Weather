@@ -31,16 +31,12 @@ namespace Weather
         public CityPage() //Object forecastResults, List<Weather> cityPages
         {
             InitializeComponent();
-            searchTextBox.Text = "Enter City";
-            backgroundCompile(imageBackgrounds);
-
             
+            backgroundCompile(imageBackgrounds);
             
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/img1.jpg")));
-
-            
+      
             MiniForecastList.DataContext = Miniforecasts;
-            
         }
         public void setWeatherAPI(Weather.WeatherUndergroundAPI weatherAPI){
             this.myWeatherApp = weatherAPI;
@@ -50,7 +46,6 @@ namespace Weather
             MiniForecast MF = new MiniForecast();
             Weather.Forecast theForecast = new Weather.Forecast();
             theForecast = await getForecast(cityToAdd);
-            MF.SF = theForecast.simpleforecast;
             MF.conditions = theForecast.simpleforecast.forecastday[0].conditions;
             MF.CityName = cityToAdd.name;
             return MF;
@@ -66,18 +61,6 @@ namespace Weather
                 imageBackgrounds[i] = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/img" + (i + 1) + ".jpg")));
             }
              
-        }
-        private Weather.ForecastResults returnForecastResults(Weather.ForecastResults myForecast)
-        {
-
-            Weather.Forecastday2 todayForecast = new Weather.Forecastday2();
-
-            todayForecast.date.day = 17;
-            todayForecast.date.month = 3;
-            todayForecast.date.year = 2015;
-            myForecast.forecast.simpleforecast.forecastday.Add(todayForecast);
-
-            return myForecast;
         }
         private void cmdDeleteUser_Clicked(object sender, RoutedEventArgs e)
         {
@@ -137,24 +120,61 @@ namespace Weather
     public class MiniForecast
     {
         public string CityName { get; set; }
-        public Weather.Simpleforecast SF { get; set; }
+        public string currentTemp { get; set; }
         public string conditions { get; set; }
-        //public string windspeed { get; set; }
-        //public List<DayForecast> weekForecast { get; set; }
+        public string rainPercentage { get; set; }
+        public string windspeed { get; set; }
+        public string mean5DayTemp { get; set; }
+
+        public string dayOfTheWeek1 { get; set; }
+        public string month1 { get; set; }
+        public string day1 { get; set; }
+        public string icon1 { get; set; }
+        public string high1 { get; set; }
+        public string low1 { get; set; }
+        public string conditions1 { get; set; }
+        public string rainPercentage1 { get; set; }
+        public string windSpeed1 { get; set; }
+
+        public string dayOfTheWeek2 { get; set; }
+        public string month2 { get; set; }
+        public string day2 { get; set; }
+        public string icon2 { get; set; }
+        public string high2 { get; set; }
+        public string low2 { get; set; }
+        public string conditions2 { get; set; }
+        public string rainPercentage2 { get; set; }
+        public string windSpeed2 { get; set; }
+
+        public string dayOfTheWeek3 { get; set; }
+        public string month3 { get; set; }
+        public string day3 { get; set; }
+        public string icon3 { get; set; }
+        public string high3 { get; set; }
+        public string low3 { get; set; }
+        public string conditions3 { get; set; }
+        public string rainPercentage3 { get; set; }
+        public string windSpeed3 { get; set; }
+
+        public string dayOfTheWeek4 { get; set; }
+        public string month4 { get; set; }
+        public string day4 { get; set; }
+        public string icon4 { get; set; }
+        public string high4 { get; set; }
+        public string low4 { get; set; }
+        public string conditions4 { get; set; }
+        public string rainPercentage4 { get; set; }
+        public string windSpeed4 { get; set; }
+
+        public string dayOfTheWeek5 { get; set; }
+        public string month5 { get; set; }
+        public string day5 { get; set; }
+        public string icon5 { get; set; }
+        public string high5 { get; set; }
+        public string low5 { get; set; }
+        public string conditions5 { get; set; }
+        public string rainPercentage5 { get; set; }
+        public string windSpeed5 { get; set; }
     }
-    //public class DayForecast
-    //{
-    //    public string dayOfTheWeek { get; set; }
-    //    public string month { get; set; }
-    //    public string day { get; set; }
-    //    public string year { get; set; }
-    //    public string high { get; set; }
-    //    public string low { get; set; }
-    //    public string icon { get; set; }
-    //    public string icon { get; set; }
-    //    public string icon { get; set; }
-    //    public string rainPercentage { get; set; }
-    //    public string windSpeed { get; set; }
-    //}
 }
 

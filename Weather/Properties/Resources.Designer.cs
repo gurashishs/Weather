@@ -63,9 +63,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__1_ {
+        internal static System.Drawing.Bitmap Arrows_Right_circular_icon2 {
             get {
-                object obj = ResourceManager.GetObject("img__1_", resourceCulture);
+                object obj = ResourceManager.GetObject("Arrows_Right_circular_icon2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__10_ {
+        internal static System.Drawing.Bitmap CoverBackup {
             get {
-                object obj = ResourceManager.GetObject("img__10_", resourceCulture);
+                object obj = ResourceManager.GetObject("CoverBackup", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__11_ {
+        internal static System.Drawing.Bitmap img1 {
             get {
-                object obj = ResourceManager.GetObject("img__11_", resourceCulture);
+                object obj = ResourceManager.GetObject("img1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__12_ {
+        internal static System.Drawing.Bitmap img10 {
             get {
-                object obj = ResourceManager.GetObject("img__12_", resourceCulture);
+                object obj = ResourceManager.GetObject("img10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__13_ {
+        internal static System.Drawing.Bitmap img11 {
             get {
-                object obj = ResourceManager.GetObject("img__13_", resourceCulture);
+                object obj = ResourceManager.GetObject("img11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__14_ {
+        internal static System.Drawing.Bitmap img12 {
             get {
-                object obj = ResourceManager.GetObject("img__14_", resourceCulture);
+                object obj = ResourceManager.GetObject("img12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__15_ {
+        internal static System.Drawing.Bitmap img13 {
             get {
-                object obj = ResourceManager.GetObject("img__15_", resourceCulture);
+                object obj = ResourceManager.GetObject("img13", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__16_ {
+        internal static System.Drawing.Bitmap img14 {
             get {
-                object obj = ResourceManager.GetObject("img__16_", resourceCulture);
+                object obj = ResourceManager.GetObject("img14", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__17_ {
+        internal static System.Drawing.Bitmap img15 {
             get {
-                object obj = ResourceManager.GetObject("img__17_", resourceCulture);
+                object obj = ResourceManager.GetObject("img15", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__18_ {
+        internal static System.Drawing.Bitmap img16 {
             get {
-                object obj = ResourceManager.GetObject("img__18_", resourceCulture);
+                object obj = ResourceManager.GetObject("img16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__19_ {
+        internal static System.Drawing.Bitmap img17 {
             get {
-                object obj = ResourceManager.GetObject("img__19_", resourceCulture);
+                object obj = ResourceManager.GetObject("img17", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__2_ {
+        internal static System.Drawing.Bitmap img18 {
             get {
-                object obj = ResourceManager.GetObject("img__2_", resourceCulture);
+                object obj = ResourceManager.GetObject("img18", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__20_ {
+        internal static System.Drawing.Bitmap img19 {
             get {
-                object obj = ResourceManager.GetObject("img__20_", resourceCulture);
+                object obj = ResourceManager.GetObject("img19", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__21_ {
+        internal static System.Drawing.Bitmap img2 {
             get {
-                object obj = ResourceManager.GetObject("img__21_", resourceCulture);
+                object obj = ResourceManager.GetObject("img2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__22_ {
+        internal static System.Drawing.Bitmap img20 {
             get {
-                object obj = ResourceManager.GetObject("img__22_", resourceCulture);
+                object obj = ResourceManager.GetObject("img20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__23_ {
+        internal static System.Drawing.Bitmap img21 {
             get {
-                object obj = ResourceManager.GetObject("img__23_", resourceCulture);
+                object obj = ResourceManager.GetObject("img21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__24_ {
+        internal static System.Drawing.Bitmap img22 {
             get {
-                object obj = ResourceManager.GetObject("img__24_", resourceCulture);
+                object obj = ResourceManager.GetObject("img22", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__25_ {
+        internal static System.Drawing.Bitmap img23 {
             get {
-                object obj = ResourceManager.GetObject("img__25_", resourceCulture);
+                object obj = ResourceManager.GetObject("img23", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +243,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__26_ {
+        internal static System.Drawing.Bitmap img24 {
             get {
-                object obj = ResourceManager.GetObject("img__26_", resourceCulture);
+                object obj = ResourceManager.GetObject("img24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +253,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__27_ {
+        internal static System.Drawing.Bitmap img25 {
             get {
-                object obj = ResourceManager.GetObject("img__27_", resourceCulture);
+                object obj = ResourceManager.GetObject("img25", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +263,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__28_ {
+        internal static System.Drawing.Bitmap img26 {
             get {
-                object obj = ResourceManager.GetObject("img__28_", resourceCulture);
+                object obj = ResourceManager.GetObject("img26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +273,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__29_ {
+        internal static System.Drawing.Bitmap img27 {
             get {
-                object obj = ResourceManager.GetObject("img__29_", resourceCulture);
+                object obj = ResourceManager.GetObject("img27", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +283,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__3_ {
+        internal static System.Drawing.Bitmap img28 {
             get {
-                object obj = ResourceManager.GetObject("img__3_", resourceCulture);
+                object obj = ResourceManager.GetObject("img28", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +293,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__30_ {
+        internal static System.Drawing.Bitmap img29 {
             get {
-                object obj = ResourceManager.GetObject("img__30_", resourceCulture);
+                object obj = ResourceManager.GetObject("img29", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +303,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__31_ {
+        internal static System.Drawing.Bitmap img3 {
             get {
-                object obj = ResourceManager.GetObject("img__31_", resourceCulture);
+                object obj = ResourceManager.GetObject("img3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +313,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__32_ {
+        internal static System.Drawing.Bitmap img30 {
             get {
-                object obj = ResourceManager.GetObject("img__32_", resourceCulture);
+                object obj = ResourceManager.GetObject("img30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +323,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__33_ {
+        internal static System.Drawing.Bitmap img31 {
             get {
-                object obj = ResourceManager.GetObject("img__33_", resourceCulture);
+                object obj = ResourceManager.GetObject("img31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +333,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__34_ {
+        internal static System.Drawing.Bitmap img32 {
             get {
-                object obj = ResourceManager.GetObject("img__34_", resourceCulture);
+                object obj = ResourceManager.GetObject("img32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +343,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__35_ {
+        internal static System.Drawing.Bitmap img33 {
             get {
-                object obj = ResourceManager.GetObject("img__35_", resourceCulture);
+                object obj = ResourceManager.GetObject("img33", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +353,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__36_ {
+        internal static System.Drawing.Bitmap img34 {
             get {
-                object obj = ResourceManager.GetObject("img__36_", resourceCulture);
+                object obj = ResourceManager.GetObject("img34", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +363,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__37_ {
+        internal static System.Drawing.Bitmap img35 {
             get {
-                object obj = ResourceManager.GetObject("img__37_", resourceCulture);
+                object obj = ResourceManager.GetObject("img35", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,9 +373,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__38_ {
+        internal static System.Drawing.Bitmap img36 {
             get {
-                object obj = ResourceManager.GetObject("img__38_", resourceCulture);
+                object obj = ResourceManager.GetObject("img36", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +383,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__39_ {
+        internal static System.Drawing.Bitmap img37 {
             get {
-                object obj = ResourceManager.GetObject("img__39_", resourceCulture);
+                object obj = ResourceManager.GetObject("img37", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,9 +393,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__4_ {
+        internal static System.Drawing.Bitmap img38 {
             get {
-                object obj = ResourceManager.GetObject("img__4_", resourceCulture);
+                object obj = ResourceManager.GetObject("img38", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +403,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__5_ {
+        internal static System.Drawing.Bitmap img39 {
             get {
-                object obj = ResourceManager.GetObject("img__5_", resourceCulture);
+                object obj = ResourceManager.GetObject("img39", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +413,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__6_ {
+        internal static System.Drawing.Bitmap img4 {
             get {
-                object obj = ResourceManager.GetObject("img__6_", resourceCulture);
+                object obj = ResourceManager.GetObject("img4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +423,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__7_ {
+        internal static System.Drawing.Bitmap img5 {
             get {
-                object obj = ResourceManager.GetObject("img__7_", resourceCulture);
+                object obj = ResourceManager.GetObject("img5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +433,9 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__8_ {
+        internal static System.Drawing.Bitmap img6 {
             get {
-                object obj = ResourceManager.GetObject("img__8_", resourceCulture);
+                object obj = ResourceManager.GetObject("img6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +443,29 @@ namespace Weather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img__9_ {
+        internal static System.Drawing.Bitmap img7 {
             get {
-                object obj = ResourceManager.GetObject("img__9_", resourceCulture);
+                object obj = ResourceManager.GetObject("img7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img8 {
+            get {
+                object obj = ResourceManager.GetObject("img8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img9 {
+            get {
+                object obj = ResourceManager.GetObject("img9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

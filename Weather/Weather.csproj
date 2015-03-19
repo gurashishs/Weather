@@ -56,8 +56,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CurrentObservation.cs" />
+    <Compile Include="CityPage.xaml.cs">
+      <DependentUpon>CityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartupScreen.xaml.cs">
+      <DependentUpon>StartupScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WeatherUndergroundAPI.cs" />
+    <Page Include="CityPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,6 +82,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StartupScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -102,121 +115,127 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %281%29.jpg" />
+    <Resource Include="Resources\Arrows-Right-circular-icon2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %282%29.jpg" />
+    <Resource Include="Resources\CoverBackup.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %283%29.jpg" />
+    <Resource Include="Resources\img1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %284%29.jpg" />
+    <Resource Include="Resources\img2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %285%29.jpg" />
+    <Resource Include="Resources\img3.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %286%29.jpg" />
+    <Resource Include="Resources\img4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %287%29.jpg" />
+    <Resource Include="Resources\img5.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %288%29.jpg" />
+    <Resource Include="Resources\img6.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %289%29.jpg" />
+    <Resource Include="Resources\img7.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2810%29.jpg" />
+    <Resource Include="Resources\img8.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2811%29.jpg" />
+    <Resource Include="Resources\img9.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2812%29.jpg" />
+    <Resource Include="Resources\img10.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2813%29.jpg" />
+    <Resource Include="Resources\img11.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2814%29.jpg" />
+    <Resource Include="Resources\img12.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2815%29.jpg" />
+    <Resource Include="Resources\img13.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2816%29.jpg" />
+    <Resource Include="Resources\img14.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2817%29.jpg" />
+    <Resource Include="Resources\img15.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2818%29.jpg" />
+    <Resource Include="Resources\img16.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2819%29.jpg" />
+    <Resource Include="Resources\img17.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2820%29.jpg" />
+    <Resource Include="Resources\img18.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2821%29.jpg" />
+    <Resource Include="Resources\img19.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2822%29.jpg" />
+    <Resource Include="Resources\img20.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2823%29.jpg" />
+    <Resource Include="Resources\img21.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2824%29.jpg" />
+    <Resource Include="Resources\img22.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2825%29.jpg" />
+    <Resource Include="Resources\img23.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2826%29.jpg" />
+    <Resource Include="Resources\img24.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2827%29.jpg" />
+    <Resource Include="Resources\img25.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2828%29.jpg" />
+    <Resource Include="Resources\img26.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2829%29.jpg" />
+    <Resource Include="Resources\img27.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2830%29.jpg" />
+    <Resource Include="Resources\img28.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2831%29.jpg" />
+    <Resource Include="Resources\img29.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2832%29.jpg" />
+    <Resource Include="Resources\img30.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2833%29.jpg" />
+    <Resource Include="Resources\img31.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2834%29.jpg" />
+    <Resource Include="Resources\img32.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2835%29.jpg" />
+    <Resource Include="Resources\img33.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2836%29.jpg" />
+    <Resource Include="Resources\img34.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2837%29.jpg" />
+    <Resource Include="Resources\img35.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2838%29.jpg" />
+    <Resource Include="Resources\img36.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img %2839%29.jpg" />
+    <Resource Include="Resources\img37.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img38.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img39.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

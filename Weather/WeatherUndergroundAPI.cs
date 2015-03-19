@@ -39,7 +39,8 @@ namespace Weather
         // Output: Current conditions for city. Returns async task. Needs to "await"ed
         public async Task<CurrentObservation> getCurrentObservationForCity(City city)
         {
-            CurrentObservationResults currentResults = await GetJsonObject<CurrentObservationResults>(CONDITIONS_STR + city.name + ".json");
+            string query = CONDITIONS_STR + "zmw:" + city.zmw + ".json";
+            CurrentObservationResults currentResults = await GetJsonObject<CurrentObservationResults>(query);
             return currentResults.current_observation;
         }
 
@@ -48,7 +49,8 @@ namespace Weather
         // Output: Forecast for city. Returns async task. Needs to "await"ed
         public async Task<Forecast> getForecastForCity(City city)
         {
-            ForecastResults forecastResults = await GetJsonObject<ForecastResults>(FORECAST_STR + city.name + ".json");
+            string query = FORECAST_STR + city.name + ".json";
+            ForecastResults forecastResults = await GetJsonObject<ForecastResults>(query);
             return forecastResults.forecast;
         }
 

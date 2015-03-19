@@ -30,15 +30,22 @@ namespace Weather
             InitializeComponent();
             setCurrentCity();
 
-            searchTextBox.SelectedIndex = 0;
+            
         }
+        
 
         private async void setCurrentCity()
         {
             this.suggestedCity = await this.myWeatherApp.getCityByGeoLookup();
-            if(!searchingText .Equals(""))
+            if (!searchingText.Equals(""))
                 searchTextBox.Text = this.suggestedCity.name;
+
             this.suggestedCities.Add(suggestedCity);
+            searchTextBox.IsEnabled = false;
+            searchTextBox.ItemsSource = this.suggestedCities;
+            searchTextBox.SelectedIndex = 0;
+            searchTextBox.Focus();
+            searchTextBox.IsEnabled = true;
         }
         private async void ComboBox_City_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -61,13 +68,14 @@ namespace Weather
             if (e.Key == Key.Return)
             {
                 if (suggestedCity != null)
-                    this.NavigationService.Navigate(new CityPage(myWeatherApp, suggestedCity, suggestedCities));
+                    this.NavigationService.Navigate(new CityPage(myWeatherApp, (City)this.searchTextBox.SelectedItem, suggestedCities));
             }
         }
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
+            
             if (suggestedCity != null)
-                this.NavigationService.Navigate(new CityPage(myWeatherApp, suggestedCity, suggestedCities));
+                this.NavigationService.Navigate(new CityPage(myWeatherApp, (City)this.searchTextBox.SelectedItem, suggestedCities));
         }
         public string suggestedCityString { get; set; }
     }

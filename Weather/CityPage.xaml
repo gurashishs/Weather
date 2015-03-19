@@ -10,7 +10,7 @@
     <Page.Resources>
         <DataTemplate x:Key="UserTemplate" >
             <StackPanel Orientation="Horizontal" Background="#3F5B5B5B">
-                <Image Source="pack://siteoforigin:,,,/Resources/Arrows-Right-circular-icon2.png"  Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Image Source="/Resources/Arrows-Right-circular-icon2.png"  Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <TextBlock Text="{Binding Path=CityName}" Width="165" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
                 <Button Content="Delete" Click="cmdDeleteUser_Clicked"/>
             </StackPanel>
@@ -43,7 +43,7 @@
 
         <StackPanel Orientation="Horizontal" Margin="22,0,180,22" Grid.RowSpan="3" Grid.Row="2">
             <TextBox Name="Descript" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.CityName}" TextWrapping="Wrap" VerticalAlignment="Top" Height="96" Width="174"/>
-            <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.WULogo}" HorizontalAlignment="Left" Height="75" Grid.RowSpan="3" VerticalAlignment="Top" Width="112"/>
+            <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.SF.forecastday[0].skyicon}" HorizontalAlignment="Left" Height="75" Grid.RowSpan="3" VerticalAlignment="Top" Width="112"/>
             <Button Content="Home" Grid.Column="1" Click="ReturnHome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Height="66" Background="Black" Foreground="White" FontSize="18" FontFamily="Forte" Grid.Row="4" />
 
         </StackPanel>

@@ -41,13 +41,45 @@
         </ListBox>
 
 
-        <StackPanel Orientation="Horizontal" Margin="22,0,180,22" Grid.RowSpan="3" Grid.Row="2">
-            <TextBox Name="Descript" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.conditions}" TextWrapping="Wrap" VerticalAlignment="Top" Height="96" Width="174"/>
-            <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.SF.forecastday[0].skyicon}" HorizontalAlignment="Left" Height="75" Grid.RowSpan="3" VerticalAlignment="Top" Width="112"/>
-            
+        <StackPanel Orientation="Horizontal" Margin="22,458,222,22" Grid.RowSpan="5">
+            <StackPanel Name="CurrentDay" Orientation="Vertical" Height="225" Width="100">
+                <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.CityName}" TextWrapping="Wrap" VerticalAlignment="Top" Height="48"/>
+                <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.logo}" HorizontalAlignment="Left" Height="75" Grid.RowSpan="3" VerticalAlignment="Top" Width="112"/>
+            </StackPanel>
+            <StackPanel Name="Day1" Orientation="Vertical" Height="225" Width="100">
+                <StackPanel Name="Date1" Orientation="Horizontal" Height="25" Width="150">
+                    <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.dayOfTheWeek1}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.month1}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.day1}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                </StackPanel>
+                <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.icon1}" HorizontalAlignment="Center" Height="75" Grid.RowSpan="3" VerticalAlignment="Top"  Width="112"/>
+                <StackPanel Name="HighLow1" Orientation="Horizontal" Height="25" Width="150">
+                    <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.high1}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.low1}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                </StackPanel>
+                <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.conditions1}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <StackPanel Name="Stat1" Orientation="Horizontal" Height="25" Width="150">
+                    <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.rainPercentage1}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.windSpeed1}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Name="Day2" Orientation="Vertical" Height="225" Width="100">
+
+            </StackPanel>
+            <StackPanel Name="Day3" Orientation="Vertical" Height="225" Width="100">
+
+            </StackPanel>
+            <StackPanel Name="Day4" Orientation="Vertical" Height="225" Width="100">
+
+            </StackPanel>
+            <StackPanel Name="Day5" Orientation="Vertical" Height="225" Width="100">
+
+            </StackPanel>
+
+
         </StackPanel>
 
-        <ComboBox Name="searchTextBox" TextBoxBase.TextChanged="ComboBox_City_TextChanged" DisplayMemberPath="name" Text="{Binding suggestedCityString}" KeyDown="OnKeyDownHandler" IsEditable="true" HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Grid.Row="4" Height="31" FontSize="16" FontFamily="Forte" Grid.ColumnSpan="2" Margin="650,34,0,0" />
+        <ComboBox Name="searchTextBox" TextBoxBase.TextChanged="ComboBox_City_TextChanged" DisplayMemberPath="name" Text="{Binding suggestedCityString}" KeyDown="OnKeyDownHandler" IsEditable="true" HorizontalAlignment="Left" VerticalAlignment="Top" Width="314" Grid.Row="4" Height="31" FontSize="16" FontFamily="Forte" Grid.ColumnSpan="2" Margin="650,34,0,0" />
 
 
         <Button Name="searchButton" Click="myButton_Click" Content="Search" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" VerticalAlignment="Top" Width="45" Height="30" BorderBrush="#FFFFC500" Background="Black" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Medium" Margin="110,35,0,0"/>

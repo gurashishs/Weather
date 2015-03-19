@@ -48,7 +48,20 @@ namespace Weather
             the10DayForecast = await get10DayForecast(cityToAdd);
             Weather.CurrentObservation theCurrentForecast= new Weather.CurrentObservation();
             //theCurrentForecast = await getCurrentForecast(cityToAdd);
+
+            //DAY 1
             MF.conditions = the10DayForecast.simpleforecast.forecastday[0].conditions;
+            MF.dayOfTheWeek1 = the10DayForecast.simpleforecast.forecastday[0].date.weekday;
+            MF.month1 = the10DayForecast.simpleforecast.forecastday[0].date.month.ToString() + "/";
+            MF.day1 = the10DayForecast.simpleforecast.forecastday[0].date.day.ToString() ;
+            MF.icon1 = the10DayForecast.simpleforecast.forecastday[0].icon_url ;
+            MF.high1 = the10DayForecast.simpleforecast.forecastday[0].high.fahrenheit + "* /";
+            MF.low1 = the10DayForecast.simpleforecast.forecastday[0].low.fahrenheit + "*";
+            MF.conditions1 = the10DayForecast.simpleforecast.forecastday[0].conditions ;
+            MF.rainPercentage1 = the10DayForecast.simpleforecast.forecastday[0].qpf_allday.@in.ToString() + "%R";
+            MF.windSpeed1 = the10DayForecast.simpleforecast.forecastday[0].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[0].avewind.dir;
+
+            MF.logo = "http://icons.wxug.com/graphics/wu2/logo_130x80.png";
             MF.CityName = cityToAdd.name;
             return MF;
         }
@@ -126,6 +139,7 @@ namespace Weather
     public class MiniForecast
     {
         public string CityName { get; set; }
+        public string logo { get; set; }
         public string currentTemp { get; set; }
         public string conditions { get; set; }
         public string rainPercentage { get; set; }

@@ -34,11 +34,17 @@ namespace Weather
         {
             InitializeComponent();
             searchTextBox.Text = "Enter City";
+            backgroundCompile(imageBackgrounds);
 
             this.myWeatherApp = myWeatherApp;
             this.suggestedCity = suggestedCity;
             this.suggestedCities = suggestedCities;
 
+            searchTextBox.IsEnabled = false;
+            searchTextBox.ItemsSource = this.suggestedCities;
+            searchTextBox.SelectedIndex = 0;
+            searchTextBox.Focus();
+            searchTextBox.IsEnabled = true;
 
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/img1.jpg")));
 
@@ -47,7 +53,7 @@ namespace Weather
 
             MiniForecastList.DataContext = Miniforecasts;
 
-            backgroundCompile(imageBackgrounds);
+            
         }
         private MiniForecast setupMiniForecast(Weather.City suggestedCity)
         {
@@ -66,9 +72,9 @@ namespace Weather
         }
         private void backgroundCompile(ImageBrush[] imageBackgrounds)
         {
-            for (int i = 1; i < 40; i++)
+            for (int i = 0; i < 39; i++)
             {
-                imageBackgrounds[i] = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/img" + i + ".jpg")));
+                imageBackgrounds[i] = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/img" + (i + 1) + ".jpg")));
             }
              
         }
@@ -91,14 +97,9 @@ namespace Weather
             {
                 MiniForecast deleteme = (MiniForecast)cmd.DataContext;
                 Miniforecasts.Remove(deleteme);
-                Miniforecasts.Add(new MiniForecast() { CityName = "Glen Dirty", Temp = 69 });
+                //Miniforecasts.Add(new MiniForecast() { CityName = "Glen Dirty" });
             }
-            //IEditableCollectionView items = tabControl.Items; //Cast to interface
-            //if (items.CanRemove)
-            //{
-            //    items.Remove(tabControl.SelectedItem);
-            //}
-            //MiniForecastList.DataContext = Miniforecasts;
+            searchTextBox.SelectedIndex = 0;
         }
         private void ReturnHome(object sender, RoutedEventArgs e)
         {
@@ -108,10 +109,8 @@ namespace Weather
         private void Forecast_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             this.Background = imageBackgrounds[counter];
-
-            //Descript.Text = AllFiles[counter];
             counter++;
-            if (counter == 4)
+            if (counter == 39)
                 counter = 0;
         }
         private async void ComboBox_City_TextChanged(object sender, TextChangedEventArgs e)
@@ -134,25 +133,35 @@ namespace Weather
         {
             if (e.Key == Key.Return)
             {
-                //searchingText.Text = "   ...searching weather for " + suggestedCity.name;//searchTextBox.Text;
-                //this.NavigationService.Navigate(new CityPage(myWeatherApp, suggestedCity, suggestedCities));
+                this.Miniforecasts.Add(setupMiniForecast((City)this.searchTextBox.SelectedItem));
             }
         }
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
-            //searchingText.Text = "   ...searching weather for " + searchTextBox.Text;
-            //this.NavigationService.Navigate(new CityPage(myWeatherApp, suggestedCity, suggestedCities));
+            this.Miniforecasts.Add(setupMiniForecast((City)this.searchTextBox.SelectedItem));
         }
     }
     public class MiniForecast
     {
         public string CityName { get; set; }
         public Weather.Simpleforecast SF { get; set; }
-        public int Temp { get; set; }
-        public string WULogo { get; set; }
-
-        //public int Low { get; set; }
+        //public string currentTemp { get; set; }
+        //public string windspeed { get; set; }
+        //public List<DayForecast> weekForecast { get; set; }
     }
-
+    //public class DayForecast
+    //{
+    //    public string dayOfTheWeek { get; set; }
+    //    public string month { get; set; }
+    //    public string day { get; set; }
+    //    public string year { get; set; }
+    //    public string high { get; set; }
+    //    public string low { get; set; }
+    //    public string icon { get; set; }
+    //    public string icon { get; set; }
+    //    public string icon { get; set; }
+    //    public string rainPercentage { get; set; }
+    //    public string windSpeed { get; set; }
+    //}
 }
 

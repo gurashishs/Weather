@@ -22,53 +22,42 @@ namespace Weather
     public partial class CityPage : Page
     {
         private Weather.WeatherUndergroundAPI myWeatherApp;
-        private Weather.City suggestedCity;
-        private List<Weather.City> suggestedCities;
 
         public ImageBrush[] imageBackgrounds = new ImageBrush[40];
-        public ObservableCollection<MiniForecast> Miniforecasts;
+        public ObservableCollection<MiniForecast> Miniforecasts = new ObservableCollection<MiniForecast>();
         public Weather.ForecastResults myForecast;
 
         int counter = 0;
-        public CityPage(Weather.WeatherUndergroundAPI myWeatherApp, Weather.City suggestedCity, List<Weather.City> suggestedCities) //Object forecastResults, List<Weather> cityPages
+        public CityPage() //Object forecastResults, List<Weather> cityPages
         {
             InitializeComponent();
             searchTextBox.Text = "Enter City";
             backgroundCompile(imageBackgrounds);
 
-            this.myWeatherApp = myWeatherApp;
-            this.suggestedCity = suggestedCity;
-            this.suggestedCities = suggestedCities;
-
-            searchTextBox.IsEnabled = false;
-            searchTextBox.ItemsSource = this.suggestedCities;
-            searchTextBox.SelectedIndex = 0;
-            searchTextBox.Focus();
-            searchTextBox.IsEnabled = true;
-
+            
+            
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/img1.jpg")));
 
-            this.Miniforecasts = new ObservableCollection<MiniForecast>();
-            this.Miniforecasts.Add(setupMiniForecast(suggestedCity));
-
+            
             MiniForecastList.DataContext = Miniforecasts;
-
             
         }
-        private MiniForecast setupMiniForecast(Weather.City suggestedCity)
+        public void setWeatherAPI(Weather.WeatherUndergroundAPI weatherAPI){
+            this.myWeatherApp = weatherAPI;
+        }
+        public async Task<MiniForecast> setupMiniForecast(Weather.City cityToAdd)
         {
             MiniForecast MF = new MiniForecast();
             Weather.Forecast theForecast = new Weather.Forecast();
-            getForecast(suggestedCity, theForecast);
+            theForecast = await getForecast(cityToAdd);
             MF.SF = theForecast.simpleforecast;
-            MF.CityName = suggestedCity.name;
+            MF.conditions = theForecast.simpleforecast.forecastday[0].conditions;
+            MF.CityName = cityToAdd.name;
             return MF;
         }
-        private async void getForecast(Weather.City suggestedCity, Weather.Forecast theForecast)
+        private async Task<Forecast> getForecast(Weather.City suggestedCity)
         {
-
-            theForecast = await this.myWeatherApp.getForecastForCity(suggestedCity);
-            //
+         return await this.myWeatherApp.getForecastForCity(suggestedCity);
         }
         private void backgroundCompile(ImageBrush[] imageBackgrounds)
         {
@@ -129,23 +118,27 @@ namespace Weather
 
             comboBox.IsEnabled = true;
         }
-        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        private async void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {
-                this.Miniforecasts.Add(setupMiniForecast((City)this.searchTextBox.SelectedItem));
+                this.Miniforecasts.Add(await setupMiniForecast((City)this.searchTextBox.SelectedItem));
+                MiniForecastList.SelectedIndex = 0;
+                MiniForecastList.Focus();
             }
         }
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        private async void myButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Miniforecasts.Add(setupMiniForecast((City)this.searchTextBox.SelectedItem));
+            this.Miniforecasts.Add(await setupMiniForecast((City)this.searchTextBox.SelectedItem));
+            MiniForecastList.SelectedIndex = 0;
+            MiniForecastList.Focus();
         }
     }
     public class MiniForecast
     {
         public string CityName { get; set; }
         public Weather.Simpleforecast SF { get; set; }
-        //public string currentTemp { get; set; }
+        public string conditions { get; set; }
         //public string windspeed { get; set; }
         //public List<DayForecast> weekForecast { get; set; }
     }

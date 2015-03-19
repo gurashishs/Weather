@@ -21,7 +21,7 @@ namespace Weather
         private Weather.WeatherUndergroundAPI myWeatherApp;
         private Weather.City suggestedCity;
         private List<Weather.City> suggestedCities;
-
+        private CityPage cityWeatherPage = new CityPage();
 
         public StartupScreen()
         {
@@ -29,7 +29,7 @@ namespace Weather
             this.myWeatherApp = new Weather.WeatherUndergroundAPI();
             InitializeComponent();
             setCurrentCity();
-
+            cityWeatherPage.setWeatherAPI(this.myWeatherApp);
             
         }
         
@@ -63,19 +63,27 @@ namespace Weather
 
             comboBox.IsEnabled = true;
         }
-        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        private async void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {
                 if (suggestedCity != null)
-                    this.NavigationService.Navigate(new CityPage(myWeatherApp, (City)this.searchTextBox.SelectedItem, suggestedCities));
+                {
+                    cityWeatherPage.Miniforecasts.Add(await cityWeatherPage.setupMiniForecast((City)this.searchTextBox.SelectedItem));
+                    this.NavigationService.Navigate(cityWeatherPage);
+                }
             }
         }
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        private async void myButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (suggestedCity != null)
-                this.NavigationService.Navigate(new CityPage(myWeatherApp, (City)this.searchTextBox.SelectedItem, suggestedCities));
+            {
+                cityWeatherPage.Miniforecasts.Add(await cityWeatherPage.setupMiniForecast((City)this.searchTextBox.SelectedItem));
+                cityWeatherPage.MiniForecastList.SelectedIndex = 0;
+                cityWeatherPage.MiniForecastList.Focus();
+                this.NavigationService.Navigate(cityWeatherPage);
+            }
         }
         public string suggestedCityString { get; set; }
     }

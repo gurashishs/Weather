@@ -59,6 +59,7 @@
     <Compile Include="CityPage.xaml.cs">
       <DependentUpon>CityPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CurrentObservation.cs" />
     <Compile Include="StartupScreen.xaml.cs">
       <DependentUpon>StartupScreen.xaml</DependentUpon>
     </Compile>

@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Weather
 {
-    public class Features
+    public class GeoLookupFeatures
     {
         public int geolookup { get; set; }
     }
 
-    public class Response
+    public class GeoLookupResponse
     {
         public string version { get; set; }
         public string termsofService { get; set; }
-        public Features features { get; set; }
+        public GeoLookupFeatures features { get; set; }
     }
 
     public class Station
@@ -80,7 +80,7 @@ namespace Weather
 
     public class GeoLookup
     {
-        public Response response { get; set; }
+        public GeoLookupResponse response { get; set; }
         public Location location { get; set; }
     }
 }

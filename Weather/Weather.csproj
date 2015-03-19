@@ -37,6 +37,7 @@
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,6 +99,123 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %285%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %286%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %287%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %288%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %289%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2810%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2811%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2812%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2813%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2814%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2815%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2816%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2817%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2818%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2819%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2820%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2821%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2822%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2823%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2824%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2825%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2826%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2827%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2828%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2829%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2830%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2831%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2832%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2833%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2834%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2835%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2836%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2837%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2838%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img %2839%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

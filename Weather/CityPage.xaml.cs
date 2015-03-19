@@ -47,20 +47,60 @@ namespace Weather
             Weather.Forecast the10DayForecast = new Weather.Forecast();
             the10DayForecast = await get10DayForecast(cityToAdd);
             Weather.CurrentObservation theCurrentForecast= new Weather.CurrentObservation();
-            //theCurrentForecast = await getCurrentForecast(cityToAdd);
+            theCurrentForecast = await getCurrentForecast(cityToAdd);
 
-            //DAY 1
-            MF.conditions = the10DayForecast.simpleforecast.forecastday[0].conditions;
-            MF.dayOfTheWeek1 = the10DayForecast.simpleforecast.forecastday[0].date.weekday;
-            MF.month1 = the10DayForecast.simpleforecast.forecastday[0].date.month.ToString() + "/";
-            MF.day1 = the10DayForecast.simpleforecast.forecastday[0].date.day.ToString() ;
-            MF.icon1 = the10DayForecast.simpleforecast.forecastday[0].icon_url ;
-            MF.high1 = the10DayForecast.simpleforecast.forecastday[0].high.fahrenheit + "* /";
-            MF.low1 = the10DayForecast.simpleforecast.forecastday[0].low.fahrenheit + "*";
-            MF.conditions1 = the10DayForecast.simpleforecast.forecastday[0].conditions ;
-            MF.rainPercentage1 = the10DayForecast.simpleforecast.forecastday[0].qpf_allday.@in.ToString() + "%R";
-            MF.windSpeed1 = the10DayForecast.simpleforecast.forecastday[0].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[0].avewind.dir;
+            //DAY 1         
+            MF.dayOfTheWeek1 = the10DayForecast.simpleforecast.forecastday[1].date.weekday;
+            MF.month1 = the10DayForecast.simpleforecast.forecastday[1].date.month.ToString() + "/";
+            MF.day1 = the10DayForecast.simpleforecast.forecastday[1].date.day.ToString() ;
+            MF.icon1 = the10DayForecast.simpleforecast.forecastday[1].icon_url ;
+            MF.high1 = the10DayForecast.simpleforecast.forecastday[1].high.fahrenheit + "* /";
+            MF.low1 = the10DayForecast.simpleforecast.forecastday[1].low.fahrenheit + "*";
+            MF.conditions1 = the10DayForecast.simpleforecast.forecastday[1].conditions ;
+            MF.rainPercentage1 = (the10DayForecast.simpleforecast.forecastday[1].qpf_allday.@in*100).ToString() + "%R";
+            MF.windSpeed1 = the10DayForecast.simpleforecast.forecastday[1].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[1].avewind.dir;
+            //DAY 2
+            MF.dayOfTheWeek2 = the10DayForecast.simpleforecast.forecastday[2].date.weekday;
+            MF.month2 = the10DayForecast.simpleforecast.forecastday[2].date.month.ToString() + "/";
+            MF.day2 = the10DayForecast.simpleforecast.forecastday[2].date.day.ToString();
+            MF.icon2 = the10DayForecast.simpleforecast.forecastday[2].icon_url;
+            MF.high2 = the10DayForecast.simpleforecast.forecastday[2].high.fahrenheit + "* /";
+            MF.low2 = the10DayForecast.simpleforecast.forecastday[2].low.fahrenheit + "*";
+            MF.conditions2 = the10DayForecast.simpleforecast.forecastday[2].conditions;
+            MF.rainPercentage2 = (the10DayForecast.simpleforecast.forecastday[2].qpf_allday.@in * 100).ToString() + "%R";
+            MF.windSpeed2 = the10DayForecast.simpleforecast.forecastday[2].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[2].avewind.dir;
+            //DAY 3
+            MF.dayOfTheWeek1 = the10DayForecast.simpleforecast.forecastday[1].date.weekday;
+            MF.month1 = the10DayForecast.simpleforecast.forecastday[1].date.month.ToString() + "/";
+            MF.day1 = the10DayForecast.simpleforecast.forecastday[1].date.day.ToString();
+            MF.icon1 = the10DayForecast.simpleforecast.forecastday[1].icon_url;
+            MF.high1 = the10DayForecast.simpleforecast.forecastday[1].high.fahrenheit + "* /";
+            MF.low1 = the10DayForecast.simpleforecast.forecastday[1].low.fahrenheit + "*";
+            MF.conditions1 = the10DayForecast.simpleforecast.forecastday[1].conditions;
+            MF.rainPercentage1 = (the10DayForecast.simpleforecast.forecastday[1].qpf_allday.@in * 100).ToString() + "%R";
+            MF.windSpeed1 = the10DayForecast.simpleforecast.forecastday[1].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[0].avewind.dir;
+            //DAY 4
+            MF.dayOfTheWeek1 = the10DayForecast.simpleforecast.forecastday[1].date.weekday;
+            MF.month1 = the10DayForecast.simpleforecast.forecastday[1].date.month.ToString() + "/";
+            MF.day1 = the10DayForecast.simpleforecast.forecastday[1].date.day.ToString();
+            MF.icon1 = the10DayForecast.simpleforecast.forecastday[1].icon_url;
+            MF.high1 = the10DayForecast.simpleforecast.forecastday[1].high.fahrenheit + "* /";
+            MF.low1 = the10DayForecast.simpleforecast.forecastday[1].low.fahrenheit + "*";
+            MF.conditions1 = the10DayForecast.simpleforecast.forecastday[1].conditions;
+            MF.rainPercentage1 = (the10DayForecast.simpleforecast.forecastday[1].qpf_allday.@in * 100).ToString() + "%R";
+            MF.windSpeed1 = the10DayForecast.simpleforecast.forecastday[1].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[0].avewind.dir;
+            //DAY 5
+            MF.dayOfTheWeek1 = the10DayForecast.simpleforecast.forecastday[1].date.weekday;
+            MF.month1 = the10DayForecast.simpleforecast.forecastday[1].date.month.ToString() + "/";
+            MF.day1 = the10DayForecast.simpleforecast.forecastday[1].date.day.ToString();
+            MF.icon1 = the10DayForecast.simpleforecast.forecastday[1].icon_url;
+            MF.high1 = the10DayForecast.simpleforecast.forecastday[1].high.fahrenheit + "* /";
+            MF.low1 = the10DayForecast.simpleforecast.forecastday[1].low.fahrenheit + "*";
+            MF.conditions1 = the10DayForecast.simpleforecast.forecastday[1].conditions;
+            MF.rainPercentage1 = (the10DayForecast.simpleforecast.forecastday[1].qpf_allday.@in * 100).ToString() + "%R";
+            MF.windSpeed1 = the10DayForecast.simpleforecast.forecastday[1].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[0].avewind.dir;
 
+            MF.conditions = the10DayForecast.simpleforecast.forecastday[1].conditions;
             MF.logo = "http://icons.wxug.com/graphics/wu2/logo_130x80.png";
             MF.CityName = cityToAdd.name;
             return MF;
@@ -122,7 +162,7 @@ namespace Weather
         }
         private async void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Return)
+            if (e.Key == Key.Return && this.searchTextBox.Text != "" && this.searchTextBox.Text.Length >= 5)
             {
                 this.Miniforecasts.Add(await setupMiniForecast((City)this.searchTextBox.SelectedItem));
                 MiniForecastList.SelectedIndex = 0;
@@ -131,9 +171,12 @@ namespace Weather
         }
         private async void myButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Miniforecasts.Add(await setupMiniForecast((City)this.searchTextBox.SelectedItem));
-            MiniForecastList.SelectedIndex = 0;
-            MiniForecastList.Focus();
+            if (this.searchTextBox.Text != "" && this.searchTextBox.Text.Length >= 5)
+            {
+                this.Miniforecasts.Add(await setupMiniForecast((City)this.searchTextBox.SelectedItem));
+                MiniForecastList.SelectedIndex = 0;
+                MiniForecastList.Focus();
+            }
         }
     }
     public class MiniForecast

@@ -81,7 +81,8 @@ namespace Weather
 
             if (suggestedCity != null)
             {
-                cityWeatherPage.Miniforecasts.Add(await cityWeatherPage.setupMiniForecast((City)this.searchTextBox.SelectedItem));
+                City city = (City)this.searchTextBox.SelectedItem;
+                cityWeatherPage.Miniforecasts.Add(await cityWeatherPage.setupMiniForecast(city));
                 cityWeatherPage.MiniForecastList.SelectedIndex = 0;
                 cityWeatherPage.MiniForecastList.Focus();
                 this.NavigationService.Navigate(cityWeatherPage);

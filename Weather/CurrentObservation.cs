@@ -81,7 +81,7 @@ namespace Weather
         public string wind_dir { get; set; }
         public int wind_degrees { get; set; }
         public double wind_mph { get; set; }
-        public int wind_gust_mph { get; set; }
+        //public int wind_gust_mph { get; set; }
         public int wind_kph { get; set; }
         public int wind_gust_kph { get; set; }
         public string pressure_mb { get; set; }

@@ -57,7 +57,7 @@
                     <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.high1}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.low1}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
                 </StackPanel>
-                <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.conditions1}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.conditions1}" TextWrapping="Wrap" VerticalAlignment="Center"/>
                 <StackPanel Name="Stat1" Orientation="Horizontal" Height="25" Width="150">
                     <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.rainPercentage1}" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.windSpeed1}" TextWrapping="Wrap" VerticalAlignment="Top"/>

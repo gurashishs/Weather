@@ -44,15 +44,21 @@ namespace Weather
         public async Task<MiniForecast> setupMiniForecast(Weather.City cityToAdd)
         {
             MiniForecast MF = new MiniForecast();
-            Weather.Forecast theForecast = new Weather.Forecast();
-            theForecast = await getForecast(cityToAdd);
-            MF.conditions = theForecast.simpleforecast.forecastday[0].conditions;
+            Weather.Forecast the10DayForecast = new Weather.Forecast();
+            the10DayForecast = await get10DayForecast(cityToAdd);
+            Weather.CurrentObservation theCurrentForecast= new Weather.CurrentObservation();
+            //theCurrentForecast = await getCurrentForecast(cityToAdd);
+            MF.conditions = the10DayForecast.simpleforecast.forecastday[0].conditions;
             MF.CityName = cityToAdd.name;
             return MF;
         }
-        private async Task<Forecast> getForecast(Weather.City suggestedCity)
+        private async Task<Forecast> get10DayForecast(Weather.City suggestedCity)
         {
          return await this.myWeatherApp.getForecastForCity(suggestedCity);
+        }
+        private async Task<CurrentObservation> getCurrentForecast(Weather.City suggestedCity)
+        {
+            return await this.myWeatherApp.getCurrentObservationForCity(suggestedCity);
         }
         private void backgroundCompile(ImageBrush[] imageBackgrounds)
         {

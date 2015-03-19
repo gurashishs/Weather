@@ -29,6 +29,11 @@ namespace Weather
             this.httpClient = new HttpClient();
         }
 
+        public string getAPIkey()
+        {
+            return API_KEY;
+        }
+
         // Desc: Get current conditions for the given city
         // Input: City to get current conditions for
         // Output: Current conditions for city. Returns async task. Needs to "await"ed

@@ -47,7 +47,7 @@ namespace Weather
             Weather.Forecast the10DayForecast = new Weather.Forecast();
             the10DayForecast = await get10DayForecast(cityToAdd);
             Weather.CurrentObservation theCurrentForecast= new Weather.CurrentObservation();
-            //theCurrentForecast = await getCurrentForecast(cityToAdd);
+            theCurrentForecast = await getCurrentForecast(cityToAdd);
 
             //DAY 1
             MF.conditions = the10DayForecast.simpleforecast.forecastday[0].conditions;
@@ -131,7 +131,9 @@ namespace Weather
         }
         private async void myButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Miniforecasts.Add(await setupMiniForecast((City)this.searchTextBox.SelectedItem));
+            City selectedCity = (City)this.searchTextBox.SelectedItem;
+            MiniForecast MF = await setupMiniForecast(selectedCity);
+            this.Miniforecasts.Add(MF);
             MiniForecastList.SelectedIndex = 0;
             MiniForecastList.Focus();
         }

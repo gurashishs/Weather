@@ -17,6 +17,7 @@ namespace Weather
         private const string API_KEY = "219620ed851cd61a";
         private const string GEO_LOOKUP_STR = "http://api.wunderground.com/api/" + API_KEY + "/geolookup/q/autoip.json";
         private const string FORECAST_STR = "http://api.wunderground.com/api/" + API_KEY + "/forecast/q/";
+        private const string CONDITIONS_STR = "http://api.wunderground.com/api/" + API_KEY + "/conditions/q/";
 
         private const string QUERY_STR = "http://autocomplete.wunderground.com/aq?c=US&h=0&format=JSON&query=";
         
@@ -28,12 +29,21 @@ namespace Weather
             this.httpClient = new HttpClient();
         }
 
+        // Desc: Get current conditions for the given city
+        // Input: City to get current conditions for
+        // Output: Current conditions for city. Returns async task. Needs to "await"ed
+        public async Task<CurrentObservation> getCurrentObservationForCity(City city)
+        {
+            CurrentObservationResults currentResults = await GetJsonObject<CurrentObservationResults>(CONDITIONS_STR + city.name + ".json");
+            return currentResults.current_observation;
+        }
+
         // Desc: Get forecast for the given city
         // Input: City to get forecast for
         // Output: Forecast for city. Returns async task. Needs to "await"ed
         public async Task<Forecast> getForecastForCity(City city)
         {
-            ForecastResults forecastResults = await GetJsonObject<ForecastResults>(FORECAST_STR);
+            ForecastResults forecastResults = await GetJsonObject<ForecastResults>(FORECAST_STR + city.name + ".json");
             return forecastResults.forecast;
         }
 

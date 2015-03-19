@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 namespace Weather
 {
     // WeatherUnderground API to interface with wunderground.com API
-    class WeatherUndergroundAPI
+    public class WeatherUndergroundAPI
     {
         private const string API_KEY = "219620ed851cd61a";
         private const string GEO_LOOKUP_STR = "http://api.wunderground.com/api/" + API_KEY + "/geolookup/q/autoip.json";

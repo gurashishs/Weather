@@ -24,6 +24,7 @@ namespace Weather
         public MainWindow()
         {
             InitializeComponent();
+            mainFrame.Navigate(new StartupScreen());
         }
     }
 }

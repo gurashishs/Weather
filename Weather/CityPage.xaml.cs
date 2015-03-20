@@ -28,20 +28,21 @@ namespace Weather
         public Weather.ForecastResults myForecast;
         private List<string> savedCities = new List<string>();
         public static event EventHandler forceUpdate;
-        public CityPage() //Object forecastResults, List<Weather> cityPages
+        StartupScreen homePage;
+        public CityPage(StartupScreen homePage) //Object forecastResults, List<Weather> cityPages
         {
             InitializeComponent();
-            
+            this.homePage = homePage;
             backgroundCompile(imageBackgrounds);
             
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/WaitingPage.jpg")));
       
             MiniForecastList.DataContext = Miniforecasts;
         }
-        public CityPage(List<string> savedCityNames) //Object forecastResults, List<Weather> cityPages
+        public CityPage(StartupScreen homePage, List<string> savedCityNames) //Object forecastResults, List<Weather> cityPages
         {
             InitializeComponent();
-
+            this.homePage = homePage;
             backgroundCompile(imageBackgrounds);
 
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/WaitingPage.jpg")));
@@ -208,18 +209,19 @@ namespace Weather
                 MiniForecast deleteme = (MiniForecast)cmd.DataContext;
                 Miniforecasts.Remove(deleteme);
             }
+            else {
+                MiniForecast deleteme = (MiniForecast)cmd.DataContext;
+                Miniforecasts.Remove(deleteme);
+                homePage.setCurrentCity();
+                this.NavigationService.Navigate(homePage);
+            }
             MiniForecastList.SelectedIndex = 0;
             MiniForecastList.Focus();
         }
         private void ReturnHome(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new StartupScreen());
-            //this.Miniforecasts = new ObservableCollection<MiniForecast>();
-            if (File.Exists("./SavedCities.txt"))
-            {
-                File.Delete("./SavedCities.txt");
-                
-            }
+            homePage.setCurrentCity();
+            this.NavigationService.Navigate(homePage);      
         }
         private void Forecast_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

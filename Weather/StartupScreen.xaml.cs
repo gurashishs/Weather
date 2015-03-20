@@ -25,7 +25,7 @@ namespace Weather
 
         public StartupScreen()
         {
-            this.cityWeatherPage = new CityPage();
+            this.cityWeatherPage = new CityPage(this);
             this.suggestedCities = new List<Weather.City>();
             this.myWeatherApp = new Weather.WeatherUndergroundAPI();
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace Weather
         }
         public StartupScreen(List<string> savedCityNames)
         {
-            this.cityWeatherPage = new CityPage(savedCityNames);
+            this.cityWeatherPage = new CityPage(this, savedCityNames);
             this.suggestedCities = new List<Weather.City>();
             this.myWeatherApp = new Weather.WeatherUndergroundAPI();
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace Weather
             return this.cityWeatherPage.getMiniForecastList();
         }
 
-        private async void setCurrentCity()
+        public async void setCurrentCity()
         {
             this.suggestedCity = await this.myWeatherApp.getCityByGeoLookup();
             if (!searchingText.Equals(""))
@@ -83,26 +83,26 @@ namespace Weather
         {
             if (e.Key == Key.Return)
             {
-                if (suggestedCity != null)
-                {
+                //if (suggestedCity != null)
+                //{
                     cityWeatherPage.Miniforecasts.Add(await cityWeatherPage.setupMiniForecast((City)this.searchTextBox.SelectedItem));
                     cityWeatherPage.MiniForecastList.SelectedIndex = 0;
                     cityWeatherPage.MiniForecastList.Focus();
                     this.NavigationService.Navigate(cityWeatherPage);
-                }
+                //}
             }
         }
         private async void myButton_Click(object sender, RoutedEventArgs e)
         {
 
-            if (suggestedCity != null)
-            {
+            //if (suggestedCity != null)
+            //{
                 City city = (City)this.searchTextBox.SelectedItem;
                 cityWeatherPage.Miniforecasts.Add(await cityWeatherPage.setupMiniForecast(city));
                 cityWeatherPage.MiniForecastList.SelectedIndex = 0;
                 cityWeatherPage.MiniForecastList.Focus();
                 this.NavigationService.Navigate(cityWeatherPage);
-            }
+            //}
         }
         public string suggestedCityString { get; set; }
     }

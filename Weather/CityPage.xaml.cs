@@ -18,7 +18,7 @@ using System.ComponentModel;
 
 namespace Weather
 {
-
+    public delegate void EventHandler();
     public partial class CityPage : Page
     {
         private Weather.WeatherUndergroundAPI myWeatherApp;
@@ -26,7 +26,8 @@ namespace Weather
         public ImageBrush[] imageBackgrounds = new ImageBrush[40];
         public ObservableCollection<MiniForecast> Miniforecasts = new ObservableCollection<MiniForecast>();
         public Weather.ForecastResults myForecast;
-
+        private List<string> savedCities = new List<string>();
+        public static event EventHandler forceUpdate;
         int counter = 0;
         public CityPage() //Object forecastResults, List<Weather> cityPages
         {
@@ -37,6 +38,20 @@ namespace Weather
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/img1.jpg")));
       
             MiniForecastList.DataContext = Miniforecasts;
+        }
+        public CityPage(List<string> savedCityNames) //Object forecastResults, List<Weather> cityPages
+        {
+            InitializeComponent();
+
+            backgroundCompile(imageBackgrounds);
+
+            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/img1.jpg")));
+
+            MiniForecastList.DataContext = Miniforecasts;
+            this.savedCities = savedCityNames;
+            forceUpdate += new EventHandler(setSavedCities);
+            forceUpdate.Invoke();
+            //setSavedCities(this.savedCities);
         }
         public List<string> getMiniForecastList()
         {
@@ -132,7 +147,11 @@ namespace Weather
         private void ReturnHome(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new StartupScreen());
-
+            if (File.Exists("./SavedCities.txt"))
+            {
+                File.Delete("./SavedCities.txt");
+                
+            }
         }
         private void Forecast_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -156,6 +175,21 @@ namespace Weather
             }
 
             comboBox.IsEnabled = true;
+        }
+        private async void setSavedCities()
+        {
+           this.myWeatherApp = new Weather.WeatherUndergroundAPI();
+
+            foreach (string SCN in this.savedCities)
+            {
+                List<Weather.City> cityList =  await this.myWeatherApp.getCitiesByNameQuery(SCN);
+                Miniforecasts.Add(await setupMiniForecast(cityList[0]));
+                
+            }
+            MiniForecastList.SelectedIndex = 0;
+            MiniForecastList.Focus();
+
+            
         }
         private async void OnKeyDownHandler(object sender, KeyEventArgs e)
         {

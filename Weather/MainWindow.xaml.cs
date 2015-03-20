@@ -25,21 +25,44 @@ namespace Weather
     public partial class MainWindow : Window
     {
         StartupScreen myStartup;
+        int startSearchLock = 0;
         public MainWindow()
         {
             InitializeComponent();
-            this.myStartup = new StartupScreen();
-            mainFrame.Navigate(myStartup);
+            if (File.Exists("./SavedCities.txt"))
+            {
+                List<string> savedCities = (File.ReadLines("./SavedCities.txt")).ToList();
+                if (savedCities.Count == 0)
+                {
+                    this.myStartup = new StartupScreen();
+                    mainFrame.Navigate(myStartup);
+                    startSearchLock = 1;
+                }
+                else
+                {
+                    this.myStartup = new StartupScreen(savedCities);
+                    mainFrame.Navigate(myStartup.getPage());
+                    startSearchLock = 1;
+                }
+            }
+            else {
+                this.myStartup = new StartupScreen();
+                mainFrame.Navigate(myStartup);
+                startSearchLock = 1;
+            }
+            
         }
         private void Window_Closing(object sender, CancelEventArgs e)
         {
-            string createText = "";
-            List<string> forecastsToSave = this.myStartup.getMiniForecastList();
-            foreach (var MF in forecastsToSave)
-            {
-                createText += MF + Environment.NewLine; ;
+            if (startSearchLock == 1) {
+                string createText = "";
+                List<string> forecastsToSave = this.myStartup.getMiniForecastList();
+                foreach (var MF in forecastsToSave)
+                {
+                    createText += MF + Environment.NewLine; ;
+                }
+                File.WriteAllText("./SavedCities.txt", createText);
             }
-            File.WriteAllText("./SavedCities.txt", createText);
         }
     }
 }

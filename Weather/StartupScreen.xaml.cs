@@ -33,6 +33,19 @@ namespace Weather
             cityWeatherPage.setWeatherAPI(this.myWeatherApp);
             
         }
+        public StartupScreen(List<string> savedCityNames)
+        {
+            this.cityWeatherPage = new CityPage(savedCityNames);
+            this.suggestedCities = new List<Weather.City>();
+            this.myWeatherApp = new Weather.WeatherUndergroundAPI();
+            InitializeComponent();
+            //setCurrentCity();
+            cityWeatherPage.setWeatherAPI(this.myWeatherApp);
+        }
+        public CityPage getPage()
+        {
+            return this.cityWeatherPage;
+        }
         public List<string> getMiniForecastList()
         {
             return this.cityWeatherPage.getMiniForecastList();

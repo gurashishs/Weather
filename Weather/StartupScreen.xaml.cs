@@ -21,10 +21,11 @@ namespace Weather
         private Weather.WeatherUndergroundAPI myWeatherApp;
         private Weather.City suggestedCity;
         private List<Weather.City> suggestedCities;
-        private CityPage cityWeatherPage = new CityPage();
+        private CityPage cityWeatherPage;
 
         public StartupScreen()
         {
+            this.cityWeatherPage = new CityPage();
             this.suggestedCities = new List<Weather.City>();
             this.myWeatherApp = new Weather.WeatherUndergroundAPI();
             InitializeComponent();
@@ -32,7 +33,10 @@ namespace Weather
             cityWeatherPage.setWeatherAPI(this.myWeatherApp);
             
         }
-        
+        public List<string> getMiniForecastList()
+        {
+            return this.cityWeatherPage.getMiniForecastList();
+        }
 
         private async void setCurrentCity()
         {

@@ -75,43 +75,43 @@ namespace Weather
             //CurrentTemp
             MF.CityName = cityToAdd.name;
             MF.WUlogo = "http://icons.wxug.com/graphics/wu2/logo_130x80.png";
-            MF.BINGlogo = "http://www.adsmartonline.com/blog/wp-content/uploads/2013/01/bing.png";
-            MF.MICROlogo = "http://blogs.microsoft.com/wp-content/uploads/2012/08/8867.Microsoft_5F00_Logo_2D00_for_2D00_screen.jpg";
-            MF.UMBClogo = "http://upload.wikimedia.org/wikipedia/commons/6/66/UMBC_Seal.png";
-            MF.currentTemp = theCurrentForecast.temp_f.ToString();
+            MF.BINGlogo = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Bing_logo.svg/2000px-Bing_logo.svg.png";
+            MF.MICROlogo = "http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/M_box.svg/2000px-M_box.svg.png";
+            MF.UMBClogo = "http://cdn.bennettrank.com/wp-content/uploads/umbc-logo.png";
+            MF.currentTemp = theCurrentForecast.temp_f.ToString() + "*";
             MF.conditions = theCurrentForecast.weather;
-            MF.stats = theCurrentForecast.precip_today_metric;
-            MF.mean5DayTemp = "";
+            MF.stats = theCurrentForecast.wind_mph + " WindSpeed";
+            MF.mean5DayTemp = the10DayForecast.simpleforecast.forecastday[0].high.fahrenheit + "* /" + the10DayForecast.simpleforecast.forecastday[0].low.fahrenheit + "*";
             //DAY 1         
             MF.date1 = the10DayForecast.simpleforecast.forecastday[1].date.weekday + the10DayForecast.simpleforecast.forecastday[1].date.month.ToString() + "/" + the10DayForecast.simpleforecast.forecastday[1].date.day.ToString();
             MF.icon1 = the10DayForecast.simpleforecast.forecastday[1].icon_url;
             MF.temperature1 = the10DayForecast.simpleforecast.forecastday[1].high.fahrenheit + "* /" + the10DayForecast.simpleforecast.forecastday[1].low.fahrenheit + "*";
             MF.conditions1 = the10DayForecast.simpleforecast.forecastday[1].conditions;
-            MF.stats1 = (the10DayForecast.simpleforecast.forecastday[1].qpf_allday.@in * 100).ToString() + "%R" + the10DayForecast.simpleforecast.forecastday[1].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[1].avewind.dir;
+            MF.stats1 = (the10DayForecast.simpleforecast.forecastday[1].qpf_allday.@in * 100).ToString() + "%R " + the10DayForecast.simpleforecast.forecastday[1].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[1].avewind.dir;
             //DAY 2
             MF.date2 = the10DayForecast.simpleforecast.forecastday[2].date.weekday + the10DayForecast.simpleforecast.forecastday[2].date.month.ToString() + "/" + the10DayForecast.simpleforecast.forecastday[2].date.day.ToString();
             MF.icon2 = the10DayForecast.simpleforecast.forecastday[2].icon_url;
             MF.temperature2 = the10DayForecast.simpleforecast.forecastday[2].high.fahrenheit + "* /" + the10DayForecast.simpleforecast.forecastday[2].low.fahrenheit + "*";
             MF.conditions2 = the10DayForecast.simpleforecast.forecastday[2].conditions;
-            MF.stats2 = (the10DayForecast.simpleforecast.forecastday[2].qpf_allday.@in * 100).ToString() + "%R" + the10DayForecast.simpleforecast.forecastday[2].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[2].avewind.dir;            ////DAY 3
+            MF.stats2 = (the10DayForecast.simpleforecast.forecastday[2].qpf_allday.@in * 100).ToString() + "%R " + the10DayForecast.simpleforecast.forecastday[2].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[2].avewind.dir;            ////DAY 3
             //DAY 3
             MF.date3 = the10DayForecast.simpleforecast.forecastday[3].date.weekday + the10DayForecast.simpleforecast.forecastday[3].date.month.ToString() + "/" + the10DayForecast.simpleforecast.forecastday[3].date.day.ToString();
             MF.icon3 = the10DayForecast.simpleforecast.forecastday[3].icon_url;
             MF.temperature3 = the10DayForecast.simpleforecast.forecastday[3].high.fahrenheit + "* /" + the10DayForecast.simpleforecast.forecastday[3].low.fahrenheit + "*";
             MF.conditions3 = the10DayForecast.simpleforecast.forecastday[3].conditions;
-            MF.stats3 = (the10DayForecast.simpleforecast.forecastday[3].qpf_allday.@in * 100).ToString() + "%R" + the10DayForecast.simpleforecast.forecastday[3].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[3].avewind.dir;
+            MF.stats3 = (the10DayForecast.simpleforecast.forecastday[3].qpf_allday.@in * 100).ToString() + "%R " + the10DayForecast.simpleforecast.forecastday[3].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[3].avewind.dir;
             //DAY 4
             MF.date4 = the10DayForecast.simpleforecast.forecastday[4].date.weekday + the10DayForecast.simpleforecast.forecastday[4].date.month.ToString() + "/" + the10DayForecast.simpleforecast.forecastday[4].date.day.ToString();
             MF.icon4 = the10DayForecast.simpleforecast.forecastday[4].icon_url;
             MF.temperature4 = the10DayForecast.simpleforecast.forecastday[4].high.fahrenheit + "* /" + the10DayForecast.simpleforecast.forecastday[4].low.fahrenheit + "*";
             MF.conditions4 = the10DayForecast.simpleforecast.forecastday[4].conditions;
-            MF.stats4 = (the10DayForecast.simpleforecast.forecastday[4].qpf_allday.@in * 100).ToString() + "%R" + the10DayForecast.simpleforecast.forecastday[4].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[4].avewind.dir;            ////DAY 5
+            MF.stats4 = (the10DayForecast.simpleforecast.forecastday[4].qpf_allday.@in * 100).ToString() + "%R " + the10DayForecast.simpleforecast.forecastday[4].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[4].avewind.dir;            ////DAY 5
             //DAY 5
             MF.date5 = the10DayForecast.simpleforecast.forecastday[5].date.weekday + the10DayForecast.simpleforecast.forecastday[5].date.month.ToString() + "/" + the10DayForecast.simpleforecast.forecastday[5].date.day.ToString();
             MF.icon5 = the10DayForecast.simpleforecast.forecastday[5].icon_url;
             MF.temperature5 = the10DayForecast.simpleforecast.forecastday[5].high.fahrenheit + "* /" + the10DayForecast.simpleforecast.forecastday[5].low.fahrenheit + "*";
             MF.conditions5 = the10DayForecast.simpleforecast.forecastday[5].conditions;
-            MF.stats5 = (the10DayForecast.simpleforecast.forecastday[5].qpf_allday.@in * 100).ToString() + "%R" + the10DayForecast.simpleforecast.forecastday[5].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[5].avewind.dir;            ////DAY 5
+            MF.stats5 = (the10DayForecast.simpleforecast.forecastday[5].qpf_allday.@in * 100).ToString() + "%R " + the10DayForecast.simpleforecast.forecastday[5].avewind.mph + " mph " + the10DayForecast.simpleforecast.forecastday[5].avewind.dir;            ////DAY 5
 
 
 

@@ -44,5 +44,22 @@ namespace WeatherUndergroundAPI_TB
             string expectedForecastURL = "http://www.wunderground.com/US/" + cityState + "/" + cityName + ".html";
             Assert.AreEqual(expectedForecastURL, forecastURL, true);
         }
+
+        [TestMethod]
+        public async Task API_ForecastCheck()
+        {
+            string cityName = "Baltimore";
+            string cityState = "MD";
+
+            WeatherUndergroundAPI api = new WeatherUndergroundAPI();
+            List<City> cities = await api.getCitiesByNameQuery(cityName + ", " + cityState);
+            City city = cities[0];
+
+            Forecast forecast = await api.getForecastForCity(city);
+
+            int count = forecast.simpleforecast.forecastday.Count;
+            int expectedcount = 10;
+            Assert.AreEqual(expectedcount, count);
+        }
     }
 }

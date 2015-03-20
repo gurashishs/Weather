@@ -16,7 +16,7 @@ namespace Weather
     {
         private const string API_KEY = "219620ed851cd61a";
         private const string GEO_LOOKUP_STR = "http://api.wunderground.com/api/" + API_KEY + "/geolookup/q/autoip.json";
-        private const string FORECAST_STR = "http://api.wunderground.com/api/" + API_KEY + "/forecast/q/";
+        private const string FORECAST_STR = "http://api.wunderground.com/api/" + API_KEY + "/forecast10day/q/";
         private const string CONDITIONS_STR = "http://api.wunderground.com/api/" + API_KEY + "/conditions/q/";
 
         private const string QUERY_STR = "http://autocomplete.wunderground.com/aq?c=US&h=0&format=JSON&query=";

@@ -53,7 +53,7 @@ namespace Weather
         public async void setCurrentCity()
         {
             this.suggestedCity = await this.myWeatherApp.getCityByGeoLookup();
-            if (!searchingText.Equals(""))
+            if (!searchTextBox.Text.Equals(""))
                 searchTextBox.Text = this.suggestedCity.name;
 
             this.suggestedCities.Add(suggestedCity);
@@ -83,26 +83,52 @@ namespace Weather
         {
             if (e.Key == Key.Return)
             {
-                //if (suggestedCity != null)
-                //{
-                    cityWeatherPage.Miniforecasts.Add(await cityWeatherPage.setupMiniForecast((City)this.searchTextBox.SelectedItem));
-                    cityWeatherPage.MiniForecastList.SelectedIndex = 0;
-                    cityWeatherPage.MiniForecastList.Focus();
-                    this.NavigationService.Navigate(cityWeatherPage);
-                //}
+                try
+                {
+                    int foundDuplicate = 0;
+                    MiniForecast miniForecast = await cityWeatherPage.setupMiniForecast((City)this.searchTextBox.SelectedItem);
+                    foreach (MiniForecast MF in cityWeatherPage.Miniforecasts)
+                    {
+                        if (MF.CityName == miniForecast.CityName)
+                            foundDuplicate = 1;
+                    }
+                    if (foundDuplicate == 0)
+                    {
+                        cityWeatherPage.Miniforecasts.Add(miniForecast);
+                        cityWeatherPage.MiniForecastList.SelectedIndex = 0;
+                        cityWeatherPage.MiniForecastList.Focus();
+                        this.NavigationService.Navigate(cityWeatherPage);
+                    }
+                }
+                catch (Exception t)
+                {
+
+                }
             }
         }
         private async void myButton_Click(object sender, RoutedEventArgs e)
         {
 
-            //if (suggestedCity != null)
-            //{
-                City city = (City)this.searchTextBox.SelectedItem;
-                cityWeatherPage.Miniforecasts.Add(await cityWeatherPage.setupMiniForecast(city));
-                cityWeatherPage.MiniForecastList.SelectedIndex = 0;
-                cityWeatherPage.MiniForecastList.Focus();
-                this.NavigationService.Navigate(cityWeatherPage);
-            //}
+            try
+            {
+                int foundDuplicate = 0;
+                MiniForecast miniForecast = await cityWeatherPage.setupMiniForecast((City)this.searchTextBox.SelectedItem);
+                foreach (MiniForecast MF in cityWeatherPage.Miniforecasts)
+                {
+                    if (MF.CityName == miniForecast.CityName)
+                        foundDuplicate = 1;
+                }
+                if (foundDuplicate == 0)
+                {
+                    cityWeatherPage.Miniforecasts.Add(miniForecast);
+                    cityWeatherPage.MiniForecastList.SelectedIndex = 0;
+                    cityWeatherPage.MiniForecastList.Focus();
+                    this.NavigationService.Navigate(cityWeatherPage);
+                }
+            }
+            catch(Exception t){
+                
+            }
         }
         public string suggestedCityString { get; set; }
     }

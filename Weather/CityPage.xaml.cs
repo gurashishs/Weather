@@ -267,14 +267,25 @@ namespace Weather
             {
                 try
                 {
-                    this.Miniforecasts.Add(await setupMiniForecast((City)this.searchTextBox.SelectedItem));
+                    int foundDuplicate = 0;
+                    MiniForecast miniForecast = await setupMiniForecast((City)this.searchTextBox.SelectedItem);
+                    foreach (MiniForecast MF in Miniforecasts)
+                    {
+                        if (MF.CityName == miniForecast.CityName)
+                            foundDuplicate = 1;
+                    }
+                    if (foundDuplicate == 0)
+                    {
+                        this.Miniforecasts.Add(miniForecast);
+                        MiniForecastList.SelectedIndex = 0;
+                        MiniForecastList.Focus();
+                    }
                 }
                 catch (Exception t)
                 {
 
                 }
-                MiniForecastList.SelectedIndex = 0;
-                MiniForecastList.Focus();
+
             }
         }
         private async void myButton_Click(object sender, RoutedEventArgs e)
@@ -283,13 +294,23 @@ namespace Weather
             {
                 try
                 {
-                    this.Miniforecasts.Add(await setupMiniForecast((City)this.searchTextBox.SelectedItem));
+                    int foundDuplicate = 0;
+                    MiniForecast miniForecast = await setupMiniForecast((City)this.searchTextBox.SelectedItem);
+                    foreach( MiniForecast MF in Miniforecasts){
+                        if (MF.CityName == miniForecast.CityName)
+                            foundDuplicate = 1;
+                    }
+                    if (foundDuplicate == 0)
+                    {
+                        this.Miniforecasts.Add(miniForecast);
+                        MiniForecastList.SelectedIndex = 0;
+                        MiniForecastList.Focus();
+                    }
                 }
                 catch(Exception t){
                 
                 }
-                MiniForecastList.SelectedIndex = 0;
-                MiniForecastList.Focus();
+
             }
         }
     }

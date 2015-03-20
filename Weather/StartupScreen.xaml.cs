@@ -39,7 +39,6 @@ namespace Weather
             this.suggestedCities = new List<Weather.City>();
             this.myWeatherApp = new Weather.WeatherUndergroundAPI();
             InitializeComponent();
-            //setCurrentCity();
             cityWeatherPage.setWeatherAPI(this.myWeatherApp);
         }
         public CityPage getPage()

@@ -12,7 +12,7 @@
         <DataTemplate x:Key="UserTemplate" >
             <StackPanel Orientation="Horizontal" Background="#3F5B5B5B">
                 <!-- <Image Source="/Resources/Arrows-Right-circular-icon2.png"  Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" /> -->
-                <TextBlock Text="{Binding Path=CityName}" Width="165" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding Path=CityName}" Width="225" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
                 <Button Content="Delete" Click="cmdDeleteUser_Clicked"/>
             </StackPanel>
         </DataTemplate>
@@ -33,7 +33,7 @@
 
         <ListBox IsSynchronizedWithCurrentItem="False" SelectionChanged="Forecast_SelectionChanged"
             Name="MiniForecastList" ItemsSource="{Binding}" SelectedItem="{Binding Path=SelectedItem}"
-            ItemTemplate="{StaticResource UserTemplate}" BorderThickness="0" Margin="0,83,10,0" HorizontalAlignment="Right" Width="262" Background="{x:Null}" FontSize="14" FontFamily="Eras ITC" FontWeight="Bold" Grid.ColumnSpan="2" Foreground="#FF020202">
+            ItemTemplate="{StaticResource UserTemplate}" BorderThickness="0" Margin="0,83,10,0" HorizontalAlignment="Right" Width="292" Background="{x:Null}" FontSize="14" FontFamily="Eras ITC" FontWeight="Bold" Grid.ColumnSpan="2" Foreground="#FF020202">
             <ListBox.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Black" Opacity="0.5"/>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" Opacity="0.5"/>
@@ -42,12 +42,14 @@
         </ListBox>
 
 
-        <StackPanel Orientation="Horizontal" Margin="22,458,219,22" Grid.RowSpan="5">
+        <StackPanel Orientation="Horizontal" Margin="10,444,219,22" Grid.RowSpan="5">
             <StackPanel Name="CurrentDay" Orientation="Vertical" Height="225" Width="128" Margin="0,0,0,-5">
                 <TextBox Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.currentTemp}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold" FontSize="48" BorderBrush="{x:Null}" Foreground="White"/>
                 <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.conditions}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.stats}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.mean5DayTemp}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.temp}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.mean}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.date}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
             </StackPanel>
             <StackPanel Name="Day1" Orientation="Vertical" Height="225" Width="100">
                 <StackPanel Name="Date1" Orientation="Horizontal" Height="25" Width="100">
@@ -61,6 +63,7 @@
                 <StackPanel Name="Stat1" Orientation="Horizontal" Height="25">
                     <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.stats1}" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 </StackPanel>
+                <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.mean1}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
             </StackPanel>
             <StackPanel Name="Day2" Orientation="Vertical" Height="225" Width="100">
                 <StackPanel Name="Date2" Orientation="Horizontal" Height="25" Width="100">
@@ -74,6 +77,7 @@
                 <StackPanel Name="Stat2" Orientation="Horizontal" Height="25" Width="100">
                     <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.stats2}" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 </StackPanel>
+                <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.mean2}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
             </StackPanel>
             <StackPanel Name="Day3" Orientation="Vertical" Height="225" Width="100">
                 <StackPanel Name="Date3" Orientation="Horizontal" Height="25" Width="100">
@@ -87,6 +91,7 @@
                 <StackPanel Name="Stat3" Orientation="Horizontal" Height="25" Width="100">
                     <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.stats3}" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 </StackPanel>
+                <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.mean3}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
             </StackPanel>
             <StackPanel Name="Day4" Orientation="Vertical" Height="225" Width="100">
                 <StackPanel Name="Date4" Orientation="Horizontal" Height="25" Width="100">
@@ -100,6 +105,7 @@
                 <StackPanel Name="Stat4" Orientation="Horizontal" Height="25" Width="100">
                     <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.stats4}" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 </StackPanel>
+                <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.mean4}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
             </StackPanel>
             <StackPanel Name="Day5" Orientation="Vertical" Height="225" Width="100">
                 <StackPanel Name="Date5" Orientation="Horizontal" Height="25" Width="100">
@@ -113,6 +119,7 @@
                 <StackPanel Name="Stat5" Orientation="Horizontal" Height="25" Width="100">
                     <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.stats5}" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 </StackPanel>
+                <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.mean5}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
             </StackPanel>
 
 
@@ -121,7 +128,7 @@
         <ComboBox Name="searchTextBox" TextBoxBase.TextChanged="ComboBox_City_TextChanged" DisplayMemberPath="name" Text="{Binding suggestedCityString}" KeyDown="OnKeyDownHandler" IsEditable="true" HorizontalAlignment="Left" VerticalAlignment="Top" Width="314" Grid.Row="4" Height="31" FontSize="16" FontFamily="Forte" Grid.ColumnSpan="2" Margin="658,56,0,0" Background="#FFE0E0E0" />
 
 
-        <Button Name="searchButton" Click="myButton_Click" Content="Search" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" VerticalAlignment="Top" Width="44" Height="30" BorderBrush="#FFFFC500" Background="Black" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Medium" Margin="110,56,0,0"/>
+        <Button Name="searchButton" Click="myButton_Click" Content="Search" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" VerticalAlignment="Top" Width="44" Height="30" BorderBrush="#FFFFC500" Background="Black" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Medium" Margin="116,56,0,0" RenderTransformOrigin="0.773,0.567"/>
         <Button Content="Home" Click="ReturnHome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Height="66" Background="Black" Foreground="White" FontSize="18" FontFamily="Forte" Grid.Column="1" Margin="94,10,0,0" />
 
         <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.WUlogo}" HorizontalAlignment="Left" Height="74" VerticalAlignment="Top" Width="94" Margin="649,23,0,0" Grid.RowSpan="3" Grid.Row="2"/>

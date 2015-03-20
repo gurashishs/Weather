@@ -28,6 +28,7 @@ namespace Weather
         int startSearchLock = 0;
         public MainWindow()
         {
+            
             InitializeComponent();
             if (File.Exists("./SavedCities.txt"))
             {
@@ -46,6 +47,7 @@ namespace Weather
                 }
             }
             else {
+             
                 this.myStartup = new StartupScreen();
                 mainFrame.Navigate(myStartup);
                 startSearchLock = 1;

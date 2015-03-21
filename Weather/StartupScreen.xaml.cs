@@ -95,7 +95,7 @@ namespace Weather
                     if (foundDuplicate == 0)
                     {
                         cityWeatherPage.Miniforecasts.Add(miniForecast);
-                        cityWeatherPage.MiniForecastList.SelectedIndex = 0;
+                        cityWeatherPage.MiniForecastList.SelectedIndex = cityWeatherPage.MiniForecastList.Items.Count - 1;
                         cityWeatherPage.MiniForecastList.Focus();
                         this.NavigationService.Navigate(cityWeatherPage);
                     }
@@ -121,7 +121,7 @@ namespace Weather
                 if (foundDuplicate == 0)
                 {
                     cityWeatherPage.Miniforecasts.Add(miniForecast);
-                    cityWeatherPage.MiniForecastList.SelectedIndex = 0;
+                    cityWeatherPage.MiniForecastList.SelectedIndex = cityWeatherPage.MiniForecastList.Items.Count - 1;
                     cityWeatherPage.MiniForecastList.Focus();
                     this.NavigationService.Navigate(cityWeatherPage);
                 }

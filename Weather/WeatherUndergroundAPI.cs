@@ -49,7 +49,7 @@ namespace Weather
         // Output: Forecast for city. Returns async task. Needs to "await"ed
         public async Task<Forecast> getForecastForCity(City city)
         {
-            string query = FORECAST_STR + city.name + ".json";
+            string query = FORECAST_STR + "zmw:" + city.zmw + ".json";
             ForecastResults forecastResults = await GetJsonObject<ForecastResults>(query);
             return forecastResults.forecast;
         }

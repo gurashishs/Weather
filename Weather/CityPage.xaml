@@ -135,7 +135,6 @@
 
 
         <Button Name="searchButton" Click="myButton_Click" Content="Search" HorizontalAlignment="Left" Grid.Column="4" Grid.Row="6" VerticalAlignment="Top" Width="46" Height="30" BorderBrush="#FFFFC500" Background="Black" Foreground="White" FontFamily="Gisha" FontWeight="Bold" Margin="315,41,0,0" RenderTransformOrigin="0.773,0.567" Grid.RowSpan="2"/>
-        <Button Content="Home" Click="ReturnHome" HorizontalAlignment="Right" VerticalAlignment="Top" Width="74" Height="66" Background="Black" Foreground="White" FontSize="18" FontFamily="Gisha" Grid.Column="4" Margin="0,1,10,0" FontWeight="Bold" Grid.Row="1" />
 
         <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.WUlogo}" HorizontalAlignment="Left" Height="74" VerticalAlignment="Top" Width="94" Margin="4,23,0,0" Grid.RowSpan="3" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="2"/>
         <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.BINGlogo}" HorizontalAlignment="Left" Height="59" VerticalAlignment="Top" Width="94" Margin="76,35,0,0" Grid.RowSpan="3" Grid.Row="4" Grid.Column="4"/>

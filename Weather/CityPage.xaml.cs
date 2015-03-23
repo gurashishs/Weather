@@ -196,7 +196,8 @@ namespace Weather
             MF.BINGlogo = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Bing_logo.svg/2000px-Bing_logo.svg.png";
             MF.MICROlogo = "http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/M_box.svg/2000px-M_box.svg.png";
             MF.UMBClogo = "http://cdn.bennettrank.com/wp-content/uploads/umbc-logo.png";
-            MF.currentTemp = theCurrentForecast.temp_f.ToString() + "°";
+            MF.currentTemp = theCurrentForecast.temp_f.ToString();
+            MF.dF = "°F";
             MF.conditions = theCurrentForecast.weather;
             string hour = (((theCurrentForecast.observation_time.Split(','))[1]).Split(' ')[1]).Split(':')[0];
             string AMorPM = (((theCurrentForecast.observation_time.Split(','))[1]).Split(' ')[2]);
@@ -398,6 +399,7 @@ namespace Weather
         public string MICROlogo { get; set; }
         public string UMBClogo { get; set; }
         public string currentTemp { get; set; }
+        public string dF { get; set; }
         public string conditions { get; set; }
         public string stats { get; set; }
         public string temp { get; set; }

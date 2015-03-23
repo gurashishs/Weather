@@ -16,16 +16,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+// Desc: Class and methods for Window to setup Framework for Pages in project
+// Interactive Logic for MainWindow.xaml
+// by: Brian Stevens
 namespace Weather
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    /// Trying Git
+    // Main Window for Framework of Pages StartupScreen and CityPage
     public partial class MainWindow : Window
     {
         StartupScreen myStartup;
         int startSearchLock = 0;
+
+        // Desc: Sets up Framework for Pages in project, checks to see if there are saved cities to skip startup page
+        // Input: none
+        // Dependancy: SavedCities.txt - text document to hold cities to be saved and reinitialized on startup
+        // Output: none
         public MainWindow()
         {
             
@@ -54,6 +59,9 @@ namespace Weather
             }
             
         }
+        // Desc: Sets up Framework for Pages in project, checks to see if there are saved cities to skip startup page
+        // Input: Sender and event when Window closes
+        // Output: Saves cities to SavedCities.txt that are in forecast list
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             if (startSearchLock == 1) {

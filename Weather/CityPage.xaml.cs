@@ -16,20 +16,27 @@ using System.Windows.Navigation;
 using System.Drawing;
 using System.ComponentModel;
 
+// Desc: Class and methods for Page to show Cities and information
+// Interactive Logic for CityPage.xaml
+// by: Brian Stevens
 namespace Weather
 {
+    // Class to display City data and hold forecast list of multiple cities
     public delegate void EventHandler();
     public partial class CityPage : Page
     {
         private Weather.WeatherUndergroundAPI myWeatherApp;
-
         public ImageBrush[] imageBackgrounds = new ImageBrush[40];
         public ObservableCollection<MiniForecast> Miniforecasts = new ObservableCollection<MiniForecast>();
-        public Weather.ForecastResults myForecast;
-        private List<string> savedCities = new List<string>();
-        public static event EventHandler forceUpdate;
-        StartupScreen homePage;
-        public CityPage(StartupScreen homePage) //Object forecastResults, List<Weather> cityPages
+        public Weather.ForecastResults myForecast; 
+        private List<string> savedCities = new List<string>(); 
+        public static event EventHandler forceUpdate; 
+        StartupScreen homePage; 
+        // Desc: Constructor to set up City Page after initial search
+        // Input: homePage - Link to homePage(StartupScreen)
+        // Dependancy: SavedCities.txt - text document to hold cities to be saved and reinitialized on startup
+        // Output: none
+        public CityPage(StartupScreen homePage) 
         {
             InitializeComponent();
             this.homePage = homePage;
@@ -39,6 +46,10 @@ namespace Weather
 
             MiniForecastList.DataContext = Miniforecasts;
         }
+        // Desc: Constructor to set up City Page when SavedCities.txt has data
+        // Input: homePage - Link to homePage(StartupScreen), savedCityNames - List of strings of city names to initialize
+        // Dependancy: SavedCities.txt - text document to hold cities to be saved and reinitialized on startup
+        // Output: none
         public CityPage(StartupScreen homePage, List<string> savedCityNames) //Object forecastResults, List<Weather> cityPages
         {
             InitializeComponent();
@@ -52,6 +63,9 @@ namespace Weather
             forceUpdate += new EventHandler(setSavedCities);
             forceUpdate.Invoke();
         }
+        // Desc: Method to find background string for image lookup
+        // Input: string weatherCondition - condition of the weather from API, int hour - time period in military time to use night backgrounds
+        // Output: string for background image lookup in Resource folder
         private string backgroundLookup(string weatherCondition, int hour)
         {
 
@@ -164,12 +178,15 @@ namespace Weather
                 case "Scattered Clouds":
                     if (hour < 7 || hour >= 19)
                         return "/Resources/img31.jpg";
-                    return "/Resources/img1.jpg";
+                    return "/Resources/img32.jpg";
                 default:
                     return "/Resources/img39.jpg";
 
             }
         }
+        // Desc: Method to generate names of all currently searched cities for saving cities on window close
+        // Input: none
+        // Output: List<string> compile current forecasts names as strings
         public List<string> getMiniForecastList()
         {
             List<string> saveMF = new List<string>();
@@ -179,10 +196,17 @@ namespace Weather
             }
             return saveMF;
         }
+        // Desc: Method to set Weather API
+        // Input: none
+        // Output: none
         public void setWeatherAPI(Weather.WeatherUndergroundAPI weatherAPI)
         {
             this.myWeatherApp = weatherAPI;
         }
+        // Desc: Method to setup MiniForecast for city that was searchedc
+        // Input: Weather.City cityToAdd - City that will be added to forecast list
+        // Dependancy: Uses tasks
+        // Output: MF - mini forecast for display
         public async Task<MiniForecast> setupMiniForecast(Weather.City cityToAdd)
         {
             MiniForecast MF = new MiniForecast();
@@ -190,8 +214,6 @@ namespace Weather
             the10DayForecast = await get10DayForecast(cityToAdd);
             Weather.CurrentObservation theCurrentForecast = new Weather.CurrentObservation();
             theCurrentForecast = await getCurrentForecast(cityToAdd);
-            //CurrentTemp
-            //theCurrentForecast.
             MF.CityName = cityToAdd.name;
 
             MF.WUlogo = "http://icons.wxug.com/graphics/wu2/logo_130x80.png";
@@ -257,14 +279,25 @@ namespace Weather
 
             return MF;
         }
+        // Desc: Method to get 10 day forecast for a City
+        // Input: Weather.City suggestedCity - gets Forecast for City using API
+        // Dependancy: Uses tasks
+        // Output: forecast for city
         private async Task<Forecast> get10DayForecast(Weather.City suggestedCity)
         {
             return await this.myWeatherApp.getForecastForCity(suggestedCity);
         }
+        // Desc: Method to get current day forecast for a City
+        // Input: Weather.City suggestedCity - gets Forecast for City using API
+        // Dependancy: Uses tasks
+        // Output: forecast for city
         private async Task<CurrentObservation> getCurrentForecast(Weather.City suggestedCity)
         {
             return await this.myWeatherApp.getCurrentObservationForCity(suggestedCity);
         }
+        // Desc: Method to load all backgrounds into an array
+        // Input: ImageBrush[] imageBackgrounds - imagebrush array of images for easy background lookup
+        // Output: none
         private void backgroundCompile(ImageBrush[] imageBackgrounds)
         {
             for (int i = 0; i < 39; i++)
@@ -273,6 +306,10 @@ namespace Weather
             }
 
         }
+        // Desc: Method to delete a city for a button push on the Listbox item for given MiniForecast
+        // Input: Sender and event when user clicks a delete button for City
+        // Dependancy: returns to startup page if last city is deleted
+        // Output: none
         private void cmdDeleteUser_Clicked(object sender, RoutedEventArgs e)
         {
             Button cmd = (Button)sender;
@@ -298,17 +335,29 @@ namespace Weather
                 MiniForecastList.Focus();
             }
         }
+        // Desc: Method to use a return home button(Not utilized)
+        // Input: Sender and event when user click a return home button
+        // Dependancy: returns to startup page if button pressed
+        // Output: none
         private void ReturnHome(object sender, RoutedEventArgs e)
         {
             homePage.setCurrentCity();
             this.NavigationService.Navigate(homePage);
         }
+        // Desc: Method to change display data when a forecast changes
+        // Input: Sender and event when user clicks an item in the MiniForecast Listbox
+        // Dependancy: changes content on CityPage for selected city
+        // Output: none
         private void Forecast_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int i = Math.Abs(MiniForecastList.SelectedIndex);
             if (Miniforecasts.Count > i)
                 this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Miniforecasts[i].Background)));
         }
+        // Desc: Method for when text changes to display options of cities to choose from
+        // Input: Sender and event when user types 5 characters in search bar
+        // Dependancy: Uses Tasks, will guess city and show city options in combobox
+        // Output: none
         private async void ComboBox_City_TextChanged(object sender, TextChangedEventArgs e)
         {
             var comboBox = sender as ComboBox;
@@ -325,6 +374,10 @@ namespace Weather
 
             comboBox.IsEnabled = true;
         }
+        // Desc: Method to reinitialize saved cities in SavedCities.txt
+        // Input: none
+        // Dependancy: Uses Tasks, sets up saved cities on CityPage, skips homePage
+        // Output: none
         private async void setSavedCities()
         {
             this.myWeatherApp = new Weather.WeatherUndergroundAPI();
@@ -341,6 +394,10 @@ namespace Weather
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Miniforecasts[i].Background)));
 
         }
+        // Desc: Method to search city in combo box using enter key
+        // Input: Sender and event when user pushes enter key in combobox
+        // Dependancy: Uses tasks, triggers city search
+        // Output: none
         private async void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return && this.searchTextBox.Text != "" && this.searchTextBox.Text.Length >= 5)
@@ -368,6 +425,10 @@ namespace Weather
 
             }
         }
+        // Desc: Method to search city in combo box when search button pressed
+        // Input: Sender and event when user pushes search button
+        // Dependancy: Uses tasks, triggers city search
+        // Output: none
         private async void myButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.searchTextBox.Text != "" && this.searchTextBox.Text.Length >= 5)
@@ -396,6 +457,7 @@ namespace Weather
             }
         }
     }
+    // Desc: MiniForecast displayed in Listbox and holds data from Weather API displayed on CityPage
     public class MiniForecast
     {
         public string CityName { get; set; }

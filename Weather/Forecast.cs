@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Desc: Classes for Forecast Data
+// by: Gurshish(Ashish) Singh
 namespace Weather
 {
     public class Features

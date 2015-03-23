@@ -9,6 +9,8 @@ using System.Net;
 using System.Xml;
 using Newtonsoft.Json;
 
+// Desc: Classes for WeatherUnderground API
+// by: Gurshish(Ashish) Singh
 namespace Weather
 {
     // WeatherUnderground API to interface with wunderground.com API

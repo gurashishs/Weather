@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Desc: Classes for City Data
+// by: Gurshish(Ashish) Singh
 namespace Weather
 {
     public class City : IComparable

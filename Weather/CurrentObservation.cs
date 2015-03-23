@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Desc: Classes for Current Weather Data
+// by: Gurshish(Ashish) Singh
 namespace Weather
 {
     public class CurrentObservationFeatures

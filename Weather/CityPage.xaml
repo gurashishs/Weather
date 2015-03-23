@@ -140,7 +140,7 @@
         <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.BINGlogo}" HorizontalAlignment="Left" Height="59" VerticalAlignment="Top" Width="94" Margin="76,35,0,0" Grid.RowSpan="3" Grid.Row="4" Grid.Column="4"/>
         <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.MICROlogo}" HorizontalAlignment="Left" Height="74" VerticalAlignment="Top" Width="94" Margin="174,23,0,0" Grid.RowSpan="3" Grid.Row="4" Grid.Column="4"/>
         <Image Source="{Binding ElementName=MiniForecastList, Path=SelectedItem.UMBClogo}" HorizontalAlignment="Left" Height="74" VerticalAlignment="Top" Width="94" Margin="273,23,0,0" Grid.Column="4" Grid.RowSpan="3" Grid.Row="4"/>
-        <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.currentTime}" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="2,3,194,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="6" Width="186" FontStyle="Italic" FontWeight="Bold" Grid.Column="4" Height="22"/>
+        <TextBox Foreground="White" Text="{Binding ElementName=MiniForecastList, Path=SelectedItem.currentTime}" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="0,3,196,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="6" Width="186" FontStyle="Italic" FontWeight="Bold" Grid.Column="4" Height="22"/>
 
     </Grid>
 </Page>

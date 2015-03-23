@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather", "Weather\Weather.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherUndergroundAPI_TB", "WeatherUndergroundAPI_TB\WeatherUndergroundAPI_TB.csproj", "{D879F411-ADBE-4C90-BE1B-F4A10C5AC03B}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WeatherProject", "WeatherProject\WeatherProject.vdproj", "{1F202B5C-A270-4DE3-8202-CB6E21C567A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{D879F411-ADBE-4C90-BE1B-F4A10C5AC03B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D879F411-ADBE-4C90-BE1B-F4A10C5AC03B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D879F411-ADBE-4C90-BE1B-F4A10C5AC03B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F202B5C-A270-4DE3-8202-CB6E21C567A9}.Debug|Any CPU.ActiveCfg = Debug
+		{1F202B5C-A270-4DE3-8202-CB6E21C567A9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

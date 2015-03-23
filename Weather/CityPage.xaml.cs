@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows; 
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -34,9 +34,9 @@ namespace Weather
             InitializeComponent();
             this.homePage = homePage;
             backgroundCompile(imageBackgrounds);
-            
+
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/WaitingPage.jpg")));
-      
+
             MiniForecastList.DataContext = Miniforecasts;
         }
         public CityPage(StartupScreen homePage, List<string> savedCityNames) //Object forecastResults, List<Weather> cityPages
@@ -52,7 +52,8 @@ namespace Weather
             forceUpdate += new EventHandler(setSavedCities);
             forceUpdate.Invoke();
         }
-        private string backgroundLookup(string weatherCondition, int hour){
+        private string backgroundLookup(string weatherCondition, int hour)
+        {
 
             switch (weatherCondition)
             {
@@ -145,11 +146,11 @@ namespace Weather
                         return "/Resources/img35.jpg";
                     return "/Resources/img34.jpg";
                 case "Thunderstorms":
-                    if(hour < 7 || hour >= 19)
+                    if (hour < 7 || hour >= 19)
                         return "/Resources/img2.jpg";
                     return "/Resources/img1.jpg";
                 case "Thunderstorm":
-                    if(hour < 7 || hour >= 19)
+                    if (hour < 7 || hour >= 19)
                         return "/Resources/img2.jpg";
                     return "/Resources/img1.jpg";
                 case "Unknown":
@@ -166,7 +167,7 @@ namespace Weather
                     return "/Resources/img1.jpg";
                 default:
                     return "/Resources/img39.jpg";
-            
+
             }
         }
         public List<string> getMiniForecastList()
@@ -178,7 +179,8 @@ namespace Weather
             }
             return saveMF;
         }
-        public void setWeatherAPI(Weather.WeatherUndergroundAPI weatherAPI){
+        public void setWeatherAPI(Weather.WeatherUndergroundAPI weatherAPI)
+        {
             this.myWeatherApp = weatherAPI;
         }
         public async Task<MiniForecast> setupMiniForecast(Weather.City cityToAdd)
@@ -186,17 +188,18 @@ namespace Weather
             MiniForecast MF = new MiniForecast();
             Weather.Forecast the10DayForecast = new Weather.Forecast();
             the10DayForecast = await get10DayForecast(cityToAdd);
-            Weather.CurrentObservation theCurrentForecast= new Weather.CurrentObservation();
+            Weather.CurrentObservation theCurrentForecast = new Weather.CurrentObservation();
             theCurrentForecast = await getCurrentForecast(cityToAdd);
             //CurrentTemp
             //theCurrentForecast.
             MF.CityName = cityToAdd.name;
-            
+
             MF.WUlogo = "http://icons.wxug.com/graphics/wu2/logo_130x80.png";
             MF.BINGlogo = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Bing_logo.svg/2000px-Bing_logo.svg.png";
             MF.MICROlogo = "http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/M_box.svg/2000px-M_box.svg.png";
             MF.UMBClogo = "http://cdn.bennettrank.com/wp-content/uploads/umbc-logo.png";
-            MF.currentTemp = theCurrentForecast.temp_f.ToString() + "°";
+            MF.currentTemp = theCurrentForecast.temp_f.ToString();
+            MF.dF = "°F";
             MF.conditions = theCurrentForecast.weather;
             string hour = (((theCurrentForecast.observation_time.Split(','))[1]).Split(' ')[1]).Split(':')[0];
             string AMorPM = (((theCurrentForecast.observation_time.Split(','))[1]).Split(' ')[2]);
@@ -204,7 +207,8 @@ namespace Weather
             {
                 MF.hour = Int32.Parse(hour) + 12;
             }
-            else {
+            else
+            {
                 MF.hour = Int32.Parse(hour);
             }
             MF.currentTime = " Current Time: " + (theCurrentForecast.observation_time.Split(','))[1];
@@ -250,12 +254,12 @@ namespace Weather
             MF.conditions5 = the10DayForecast.simpleforecast.forecastday[5].conditions;
             MF.stats5 = (the10DayForecast.simpleforecast.forecastday[5].qpf_allday.@in * 100).ToString() + "%P " + the10DayForecast.simpleforecast.forecastday[5].avewind.mph + "mph " + the10DayForecast.simpleforecast.forecastday[5].avewind.dir;            ////DAY 5
             MF.mean5 = "Mean: " + ((Int32.Parse(the10DayForecast.simpleforecast.forecastday[5].high.fahrenheit) + Int32.Parse(the10DayForecast.simpleforecast.forecastday[5].low.fahrenheit)) / 2).ToString() + "°";
-        
+
             return MF;
         }
         private async Task<Forecast> get10DayForecast(Weather.City suggestedCity)
         {
-         return await this.myWeatherApp.getForecastForCity(suggestedCity);
+            return await this.myWeatherApp.getForecastForCity(suggestedCity);
         }
         private async Task<CurrentObservation> getCurrentForecast(Weather.City suggestedCity)
         {
@@ -267,7 +271,7 @@ namespace Weather
             {
                 imageBackgrounds[i] = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Resources/img" + (i + 1) + ".jpg")));
             }
-             
+
         }
         private void cmdDeleteUser_Clicked(object sender, RoutedEventArgs e)
         {
@@ -282,9 +286,10 @@ namespace Weather
                     MiniForecastList.Focus();
                 }
                 Miniforecasts.Remove(deleteme);
-                
+
             }
-            else {
+            else
+            {
                 MiniForecast deleteme = (MiniForecast)cmd.DataContext;
                 Miniforecasts.Remove(deleteme);
                 homePage.setCurrentCity();
@@ -296,12 +301,12 @@ namespace Weather
         private void ReturnHome(object sender, RoutedEventArgs e)
         {
             homePage.setCurrentCity();
-            this.NavigationService.Navigate(homePage);      
+            this.NavigationService.Navigate(homePage);
         }
         private void Forecast_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int i = Math.Abs(MiniForecastList.SelectedIndex);
-            if(Miniforecasts.Count > i)
+            if (Miniforecasts.Count > i)
                 this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Miniforecasts[i].Background)));
         }
         private async void ComboBox_City_TextChanged(object sender, TextChangedEventArgs e)
@@ -322,19 +327,19 @@ namespace Weather
         }
         private async void setSavedCities()
         {
-           this.myWeatherApp = new Weather.WeatherUndergroundAPI();
+            this.myWeatherApp = new Weather.WeatherUndergroundAPI();
 
             foreach (string SCN in this.savedCities)
             {
-                List<Weather.City> cityList =  await this.myWeatherApp.getCitiesByNameQuery(SCN);
+                List<Weather.City> cityList = await this.myWeatherApp.getCitiesByNameQuery(SCN);
                 Miniforecasts.Add(await setupMiniForecast(cityList[0]));
-                
+
             }
             MiniForecastList.SelectedIndex = 0;
             MiniForecastList.Focus();
             int i = Math.Abs(MiniForecastList.SelectedIndex);
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Miniforecasts[i].Background)));
-            
+
         }
         private async void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
@@ -371,7 +376,8 @@ namespace Weather
                 {
                     int foundDuplicate = 0;
                     MiniForecast miniForecast = await setupMiniForecast((City)this.searchTextBox.SelectedItem);
-                    foreach( MiniForecast MF in Miniforecasts){
+                    foreach (MiniForecast MF in Miniforecasts)
+                    {
                         if (MF.CityName == miniForecast.CityName)
                             foundDuplicate = 1;
                     }
@@ -382,8 +388,9 @@ namespace Weather
                         MiniForecastList.Focus();
                     }
                 }
-                catch(Exception t){
-                
+                catch (Exception t)
+                {
+
                 }
 
             }
@@ -398,6 +405,7 @@ namespace Weather
         public string MICROlogo { get; set; }
         public string UMBClogo { get; set; }
         public string currentTemp { get; set; }
+        public string dF { get; set; }
         public string conditions { get; set; }
         public string stats { get; set; }
         public string temp { get; set; }
